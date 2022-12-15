@@ -286,7 +286,8 @@
                             <h3>Des conférences et tables rondes</h3>
                             <p>
                                 Vous pourrez assister à des conférences et des tables rondes animées par des professionnels
-                                du secteur du jeu vidéo et du numérique. De nombreux thèmes y seront abordés tels que les
+                                du secteur du jeu vidéo et du numérique.
+                                <br>De nombreux thèmes y seront abordés tels que les
                                 métiers dans le jeu vidéo et du numérique, le cyber harcèlement, les NFT, la relation aux
                                 écrans, la création de son studio de jeu vidéo, etc...
                             </p>
@@ -301,7 +302,7 @@
                                 situé dans votre département et dans les départements limitrophes. L'occasion de rencontrer
                                 votre futur employeur près de chez vous, que vous soyez à la recherche d’un emploi, un stage,
                                 ou une alternance.
-                                Cet espace est en partenariat avec l’agence française pour le jeu vidéo (AFJV), le portail de
+                                <br>Cet espace est en partenariat avec l’agence française pour le jeu vidéo (AFJV), le portail de
                                 l’emploi et des informations professionnelles des industries multimédia et jeux vidéo.
                             </p>
                         </div>
