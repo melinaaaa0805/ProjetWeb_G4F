@@ -564,7 +564,7 @@ class Entity implements JsonSerializable
      */
     protected function hasMappedProperty(string $key): bool
     {
-        $property = array_search($key, $this->datamap, true);
+        $property = in_array($key, $this->datamap, true);
 
         return $property !== false;
     }
