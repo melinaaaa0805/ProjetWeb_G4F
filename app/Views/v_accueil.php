@@ -269,14 +269,14 @@
                                 La partie associée au salon du jeu vidéo accueil un espace Ateliers éducatifs, interactifs et
                                 numériques qui sera proposé par les professionnels du secteur. Il sera organisé en plusieurs
                                 pôles différents :
-                                - Programmation/codage jeux vidéo ;
-                                - Robotique, objets connectés, impression 3D ;
-                                - Image, animation et vidéo
-                                - Art Graphique et manga
-                                - Simulation (danse – conduite – sports – réalité virtuelle) ;
-                                - Sensibilisation (prévention web – cyber harcèlement – addiction) ;
-                                - Un espace de jeux (tests – ateliers – concours)
-                                - Un espace pédagogique (réflexion - codage - jeux vidéo éducatifs)
+                                <br>- Programmation/codage jeux vidéo ;
+                                <br>- Robotique, objets connectés, impression 3D ;
+                                <br>- Image, animation et vidéo
+                                <br>- Art Graphique et manga
+                                <br>- Simulation (danse – conduite – sports – réalité virtuelle) ;
+                                <br>- Sensibilisation (prévention web – cyber harcèlement – addiction) ;
+                                <br>- Un espace de jeux (tests – ateliers – concours)
+                                <br>- Un espace pédagogique (réflexion - codage - jeux vidéo éducatifs)
                             </p>
                         </div>
                     </div><!-- End testimonial item -->
