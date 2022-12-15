@@ -1,4 +1,5 @@
 <!-- ======= Hero Section ======= -->
+<title><?php echo $titre ?></title>
 <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container" data-aos="fade-up">
 
@@ -73,7 +74,6 @@
                     <h3><a href="">Les tournois</a></h3>
                 </div>
             </div>
-
         </div>
 
     </div>

@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Geek4Fun - Accueil</title>
 
 
     <!-- Favicons -->
@@ -57,7 +56,7 @@
                         <?=anchor(base_url().'/public/', 'Section tournois')?></span> </a>
                     <ul>
                         <li><a href="#click"><?=anchor(base_url().'/public/', 'Présentation')?></a></li>
-                        <li><a href="#click"><?=anchor(base_url().'/public/', 'Espace Nintendo')?></a></li>
+                        <li><a href="#click"><?=anchor(base_url().'/public/nintendo', 'Espace Nintendo')?></a></li>
                         <li><a href="#click"><?=anchor(base_url().'/public/', 'Espace Next GEN')?></a></li>
                     </ul>
                 </li>
