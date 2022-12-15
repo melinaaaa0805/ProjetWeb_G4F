@@ -126,18 +126,18 @@
                 <div class="image col-lg-6" style='background-image: url("/public/assets/img/accueil/jeux_video.jpg");' data-aos="fade-right"></div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                     <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="bx bx-receipt"></i>
+                        <i class="bx bx-world"></i>
                         <h4>Découvrir des métiers</h4>
                         <p>Venez découvrir tous les métiers de la filière du jeu vidéo à travers les différents stands. </p>
                     </div>
                     <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="bx bx-cube-alt"></i>
+                        <i class="bx bx-book-alt"></i>
                         <h4>Rencontrer des étudiants</h4>
                         <p>Pendant ce festival, vous aurez l'occasion de pouvoir rencontrer des étudiants en écoles
                             supérieures de jeux vidéo.</p>
                     </div>
                     <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="bx bx-images"></i>
+                        <i class="bx bx-shape-polygon"></i>
                         <h4>Discuter avec des entreprises</h4>
                         <p>Plusieurs entreprises seront présentes, ce sera l'occasion de discuter avec ces entreprises
                             du secteur implantées sur le territoire,des éditeurs, studios et constructeurs.</p>
@@ -314,7 +314,7 @@
                                 Composé de plusieurs dizaines postes de jeu, le salon proposera l’actualité du jeu vidéo, du
                                 rétrogaming mais aussi la présence de studios indépendants (plus particulièrement de notre
                                 département). Enfin, des tournois seront organisés lors de chaque demi-journée de
-                                l’événement
+                                l’événement.
                             </p>
                         </div>
                     </div><!-- End testimonial item -->
