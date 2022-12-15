@@ -57,19 +57,19 @@
         <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
             <div class="col-xl-2 col-md-4">
                 <div class="icon-box">
-                    <i class="ri-store-line"></i>
+                    <i class="bx bx-star"></i>
                     <h3><a href="">Notre engagement</a></h3>
                 </div>
             </div>
             <div class="col-xl-2 col-md-4">
                 <div class="icon-box">
-                    <i class="ri-bar-chart-box-line"></i>
+                    <i class="bx bx-columns"></i>
                     <h3><a href="">Le programme</a></h3>
                 </div>
             </div>
             <div class="col-xl-2 col-md-4">
                 <div class="icon-box">
-                    <i class="ri-calendar-todo-line"></i>
+                    <i class="bx bx-play-circle"></i>
                     <h3><a href="">Les tournois</a></h3>
                 </div>
             </div>

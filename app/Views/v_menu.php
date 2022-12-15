@@ -48,7 +48,7 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 <li><a class="nav-link scrollto active" href="#click">
-                        <?=anchor(base_url().'/public/', 'Accueil')?></a></li>
+                        <?=anchor(base_url().'/public/', 'Accueil',"class='nav-link scrollto active'")?></a></li>
                 <li><a class="nav-link scrollto" href="#click">
                         <?=anchor(base_url().'', 'Section Cybersécurité')?></a></li>
                 <li><a class="nav-link scrollto" href="#click">
@@ -56,9 +56,9 @@
                 <li class="dropdown"><a href="#click"><span>
                         <?=anchor(base_url().'/public/', 'Section tournois')?></span> </a>
                     <ul>
-                        <li><a href="#">Présentation</a></li>
-                        <li><a href="#">Espace Nintendo</a></li>
-                        <li><a href="#">Espace Next GEN</a></li>
+                        <li><a href="#click"><?=anchor(base_url().'/public/', 'Présentation')?></a></li>
+                        <li><a href="#click"><?=anchor(base_url().'/public/', 'Espace Nintendo')?></a></li>
+                        <li><a href="#click"><?=anchor(base_url().'/public/', 'Espace Next GEN')?></a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="#click">
