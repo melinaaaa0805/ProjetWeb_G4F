@@ -18,12 +18,15 @@
 
     <!-- Vendor CSS -->
     <link href="/public/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="/public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/public/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/public/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="/public/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="/public/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <?php echo link_tag( '/public/assets/vendor/bootstrap/css/bootstrap.min.css');?>
+    <?php echo link_tag( '/public/assets/vendor/bootstrap-icons/bootstrap-icons.css');?>
+    <?php echo link_tag( '/public/assets/vendor/boxicons/css/boxicons.min.css');?>
+    <?php echo link_tag( '/public/assets/vendor/glightbox/css/glightbox.min.csss');?>
+    <?php echo link_tag( '/public/assets/vendor/remixicon/remixicon.css');?>
+    <?php echo link_tag( '/public/assets/vendor/swiper/swiper-bundle.min.css');?>
+    <?php echo link_tag( '/public/assets/css/style.css');?>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59Hg
     ZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"
             referrerpolicy="no-referrer"></script>
@@ -31,8 +34,7 @@
             integrity="sha512-FofOhk0jW4BYQ6CFM9iJutqL2qLk6hjZ9YrS2/OnkqkD5V4HFnhTNIFSAhzP3x//AD5OzVMO8dayImv06fq0jA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Template Main CSS-->
-    <link href="/public/assets/css/style.css" rel="stylesheet">
+    <!-- Template Main CSS -->
 
 </head>
 
@@ -45,17 +47,22 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#">Accueil</a></li>
-                <li><a class="nav-link scrollto" href="#">Section Cybersécurité</a></li>
-                <li><a class="nav-link scrollto" href="#">Section Cosplay</a></li>
-                <li class="dropdown"><a href="#"><span>Section tournois</span> </a>
+                <li><a class="nav-link scrollto active" href="#click">
+                        <?=anchor(base_url().'/public/', 'Accueil')?></a></li>
+                <li><a class="nav-link scrollto" href="#click">
+                        <?=anchor(base_url().'', 'Section Cybersécurité')?></a></li>
+                <li><a class="nav-link scrollto" href="#click">
+                        <?=anchor(base_url().'/public/', 'Section Cosplay')?></a></li>
+                <li class="dropdown"><a href="#click"><span>
+                        <?=anchor(base_url().'/public/', 'Section tournois')?></span> </a>
                     <ul>
                         <li><a href="#">Présentation</a></li>
                         <li><a href="#">Espace Nintendo</a></li>
                         <li><a href="#">Espace Next GEN</a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#team">Nous contacter</a></li>
+                <li><a class="nav-link scrollto" href="#click">
+                        <?=anchor(base_url().'/public/', 'Nous contacter')?></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

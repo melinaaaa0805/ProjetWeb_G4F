@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/ProjetWeb';
+    public $baseURL = 'http://localhost:63342/ProjetWeb';
 
     /**
      * --------------------------------------------------------------------------
