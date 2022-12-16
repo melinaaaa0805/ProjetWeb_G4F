@@ -6,7 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
-
     <!-- Favicons -->
     <link href="/public/assets/img/G4F.png" rel="icon">
     <link href="/public/assets/img/G4F.png" rel="apple-touch-icon">
@@ -16,7 +15,7 @@
     400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS -->
-    <link href="/public/assets/vendor/aos/aos.css" rel="stylesheet">
+    <?php echo link_tag( '/public/assets/vendor/aos/aos.css');?>
     <?php echo link_tag( '/public/assets/vendor/bootstrap/css/bootstrap.min.css');?>
     <?php echo link_tag( '/public/assets/vendor/bootstrap-icons/bootstrap-icons.css');?>
     <?php echo link_tag( '/public/assets/vendor/boxicons/css/boxicons.min.css');?>
@@ -46,27 +45,27 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#click">
-                        <?=anchor(base_url().'/public/', 'Accueil',"class='nav-link scrollto active'")?></a></li>
-                <li><a class="nav-link scrollto" href="#click">
-                        <?=anchor(base_url().'', 'Section Cybersécurité')?></a></li>
-                <li><a class="nav-link scrollto" href="#click">
+                <li><a class="nav-link scrollto active">
+                        <?=anchor(base_url().'/public/', 'Accueil')?></a></li>
+                <li><a class="nav-link scrollto">
+                        <?=anchor(base_url().'/public/', 'Section Cybersécurité')?></a></li>
+                <li><a class="nav-link scrollto">
                         <?=anchor(base_url().'/public/', 'Section Cosplay')?></a></li>
-                <li class="dropdown"><a href="#click"><span>
-                        <?=anchor(base_url().'/public/', 'Section tournois')?></span> </a>
+                <li class="dropdown"><a><span>
+                        <?=anchor(base_url().'/public/presentation', 'Section tournois')?></span> </a>
                     <ul>
-                        <li><a href="#click"><?=anchor(base_url().'/public/', 'Présentation')?></a></li>
-                        <li><a href="#click"><?=anchor(base_url().'/public/nintendo', 'Espace Nintendo')?></a></li>
-                        <li><a href="#click"><?=anchor(base_url().'/public/', 'Espace Next GEN')?></a></li>
+                        <li><a><?=anchor(base_url().'/public/', 'Présentation')?></a></li>
+                        <li><a><?=anchor(base_url().'/public/espaceNintendo/', 'Espace Nintendo')?></a></li>
+                        <li><a><?=anchor(base_url().'/public/', 'Espace Next GEN')?></a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#click">
+                <li><a class="nav-link scrollto">
                         <?=anchor(base_url().'/public/', 'Nous contacter')?></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
-        <a href="#" class="get-started-btn scrollto">S'inscrire / Se connecter</a>
+        <a class="get-started-btn scrollto" href="">S'inscrire / Se connecter</a>
 
     </div>
 </header><!-- End Header -->

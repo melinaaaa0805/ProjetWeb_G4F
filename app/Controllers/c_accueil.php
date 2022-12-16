@@ -11,15 +11,25 @@ class c_accueil extends BaseController
         $data['titre'] = "Accueil";
         return
             view('v_menu')
-            . view('v_accueil',$data)
+            .view('v_accueil',$data)
             . view('v_footer');
     }
-    public function nintendo()
+    public function espaceNintendo()
     {
-        $data['titre'] = "Nintendo";
+        $data['titre'] = "Espace Nintendo";
         return
             view('v_menu')
-            . view('v_nintendo', $data)
+            .view('v_espaceNintendo',$data)
+            . view('v_footer');
+    }
+
+    public function login()
+    {
+        $data['titre'] = "Se Connecter ...";
+        $data['validation'] = Services::validation();
+        return
+            view('v_menu')
+            . view('v_inscription', $data)
             . view('v_footer');
     }
 }
