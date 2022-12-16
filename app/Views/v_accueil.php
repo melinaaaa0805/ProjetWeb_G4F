@@ -153,8 +153,8 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Vos avis</h2>
-                <p>Votez pour vos jeux préférés</p>
+                <h2></h2>
+                <p>Votez pour un jeu Nintendo</p>
             </div>
 
             <div class="row">
@@ -197,6 +197,10 @@
                     </div>
                 </div>
 
+                <div class="section-title">
+                    <h2></h2>
+                    <p>Votez pour un jeu Xbox</p>
+                </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box">
                         <?php
@@ -234,6 +238,10 @@
                         <h4><a href="">Halo Infinite</a></h4>
                         <p>Découvrir ce jeu</p>
                     </div>
+                </div>
+                <div class="section-title">
+                    <h2></h2>
+                    <p>Votez pour un jeu PS</p>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box">
