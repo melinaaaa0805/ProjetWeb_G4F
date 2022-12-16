@@ -199,24 +199,77 @@
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-world"></i></div>
-                        <h4><a href="">Nemo Enim</a></h4>
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nextGen/nba/NBA2K23.jpg',
+                            'alt' => 'NBA 2K23',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">NBA 2K23</a></h4>
                         <p>Découvrir ce jeu</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-slideshow"></i></div>
-                        <h4><a href="">Dele cardo</a></h4>
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nextGen/overwatch/Overwatch2.jpg',
+                            'alt' => 'Overwatch 2',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">Overwatch 2</a></h4>
                         <p>Découvrir ce jeu</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-arch"></i></div>
-                        <h4><a href="">Divera don</a></h4>
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nextGen/haloInfinite/HaloInfinite.jpg',
+                            'alt' => 'Halo Infinite',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">Halo Infinite</a></h4>
+                        <p>Découvrir ce jeu</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box">
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nextGen/granTurismo/GranTurismo7.jpg',
+                            'alt' => 'Gran Turismo 7',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">Gran Turismo 7</a></h4>
+                        <p>Découvrir ce jeu</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box">
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nextGen/F122/F122.jpg',
+                            'alt' => 'F1 22',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">F1 22</a></h4>
+                        <p>Découvrir ce jeu</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box">
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nextGen/Arkanoid/ArkanoiEternalBattle.jpg',
+                            'alt' => 'F1 22',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">Arkanoid Eternal Battle</a></h4>
                         <p>Découvrir ce jeu</p>
                     </div>
                 </div>
