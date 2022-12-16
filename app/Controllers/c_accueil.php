@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\Config\Services;
-
+use App\Models\m_jeux;
 class c_accueil extends BaseController
 {
     public function index()
@@ -16,6 +16,9 @@ class c_accueil extends BaseController
     }
     public function espaceNintendo()
     {
+        $lesJeux=new m_jeux();
+        $support="Nintendo";
+        $data['jeux']=$lesJeux->getLesJeuxSupport($support);
         $data['titre'] = "Espace Nintendo";
         return
             view('v_menu')
@@ -29,7 +32,7 @@ class c_accueil extends BaseController
         $data['validation'] = Services::validation();
         return
             view('v_menu')
-            . view('v_inscription', $data)
+            .view('v_espace',$data)
             . view('v_footer');
     }
 }

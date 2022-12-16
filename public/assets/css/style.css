@@ -663,15 +663,14 @@ section {
 }
 
 .services .icon-box .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
+  width: 100%;
+  height: 100%;
   background: #2d3083;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
   transition: 0.3s;
 }
 

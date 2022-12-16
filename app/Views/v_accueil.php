@@ -160,24 +160,39 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                        <h4><a href="">Jeux 1</a></h4>
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nintendo/marioStrikers/MarioStrikersBattleLeagueFootball.jpg',
+                            'alt' => 'Mario Strikers : Battle League Football',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">Mario Strikers : Battle League Football</a></h4>
                         <p>Découvrir ce jeu</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-file"></i></div>
-                        <h4><a href="">Jeux 2</a></h4>
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nintendo/switchSport/NintendoSwitchSports.png',
+                            'alt' => 'Nintendo Switch Sports',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">Nintendo Switch Sports</a></h4>
                         <p>Découvrir ce jeu</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box">
-                        <div class="icon"><i class="bx bx-tachometer"></i></div>
-                        <h4><a href="">Jeux 3</a></h4>
+                        <?php
+                        $propieteImage = ['src' => '/public/assets/img/nintendo/streetFighter/StreetFighter6.jpg',
+                            'alt' => 'Street Fighter 6',
+                            'class' => 'icon'];
+                        echo img($propieteImage);
+                        ?>
+                        <h4><a href="">Street Fighter 6</a></h4>
                         <p>Découvrir ce jeu</p>
                     </div>
                 </div>
