@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class m_jeux extends \CodeIgniter\Model
 {
+    ///retour tous les jeux en fonction d'un support
     public function getLesJeuxSupport($nomSupport)
     {
         $db=db_connect();

@@ -14,6 +14,7 @@ class c_accueil extends BaseController
             .view('v_accueil',$data)
             . view('v_footer');
     }
+    ///retourne la page espace nintendo avec tous les jeux nintendo
     public function espaceNintendo()
     {
         $lesJeux=new m_jeux();
