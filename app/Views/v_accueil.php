@@ -87,7 +87,7 @@
 
             <div class="row">
                 <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                    <img src="/public/assets/img/gaming_zone.png" class="img-fluid" alt="">
+                    <img src="<?php echo base_url(); ?>/public/assets/img/gaming_zone.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                     <h3>Le festival</h3>
@@ -123,7 +123,7 @@
         <div class="container" data-aos="fade-up">
 
             <div class="row">
-                <div class="image col-lg-6" style='background-image: url("/public/assets/img/accueil/jeux_video.jpg");' data-aos="fade-right"></div>
+                <div class="image col-lg-6" style='background-image: url("<?php echo base_url(); ?>/public/assets/img/accueil/jeux_video.jpg");' data-aos="fade-right"></div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                     <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
                         <i class="bx bx-world"></i>

@@ -15,18 +15,17 @@
     400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS -->
-    <?php echo link_tag( '/public/assets/vendor/aos/aos.css');?>
-    <?php echo link_tag( '/public/assets/vendor/bootstrap/css/bootstrap.min.css');?>
-    <?php echo link_tag( '/public/assets/vendor/bootstrap-icons/bootstrap-icons.css');?>
-    <?php echo link_tag( '/public/assets/vendor/boxicons/css/boxicons.min.css');?>
-    <?php echo link_tag( '/public/assets/vendor/glightbox/css/glightbox.min.csss');?>
-    <?php echo link_tag( '/public/assets/vendor/remixicon/remixicon.css');?>
-    <?php echo link_tag( '/public/assets/vendor/swiper/swiper-bundle.min.css');?>
-    <?php echo link_tag( '/public/assets/css/style.css');?>
+    <?php echo link_tag( 'public/assets/vendor/aos/aos.css');?>
+    <?php echo link_tag( 'public/assets/vendor/bootstrap/css/bootstrap.min.css');?>
+    <?php echo link_tag( 'public/assets/vendor/bootstrap-icons/bootstrap-icons.css');?>
+    <?php echo link_tag( 'public/assets/vendor/boxicons/css/boxicons.min.css');?>
+    <?php echo link_tag( 'public/assets/vendor/glightbox/css/glightbox.min.css');?>
+    <?php echo link_tag( 'public/assets/vendor/remixicon/remixicon.css');?>
+    <?php echo link_tag( 'public/assets/vendor/swiper/swiper-bundle.min.css');?>
+    <?php echo link_tag( 'public/assets/css/style.css');?>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59Hg
-    ZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"
             referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timecircles/1.5.3/TimeCircles.min.js"
             integrity="sha512-FofOhk0jW4BYQ6CFM9iJutqL2qLk6hjZ9YrS2/OnkqkD5V4HFnhTNIFSAhzP3x//AD5OzVMO8dayImv06fq0jA=="
