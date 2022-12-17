@@ -37,7 +37,7 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'c_accueil::index');
-$routes->get('/public/espaceNintendo/', 'c_accueil::espaceNintendo');
+$routes->get('espaceNintendo/', 'c_accueil::espaceNintendo');
 $routes->match(['get', 'post'], 'login', 'c_accueil::login');
 
 /*
