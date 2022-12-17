@@ -6,16 +6,15 @@ use CodeIgniter\Model;
 
 class m_jeux extends \CodeIgniter\Model
 {
-    ///retour tous les jeux en fonction d'un support
+    ///retourne tous les jeux en fonction d'un support
     public function getLesJeuxSupport($nomSupport)
     {
         $db=db_connect();
-        $builder=$db->table('jeux.jeux_nom');
-            $builder->from('jeux');
-            $builder->join('concours', 'concours.concours_idJeux = jeux.id_jeux');
-            $builder->join('zone', 'zone.zone_SupportZone = concours.concours_SupportZone');
-            $builder->getWhere(['zone_nomZone'=>$nomSupport]);
-            $builder->orderBy('jeux_nom', 'ASC');
+        $builder=$db->table('jeux')->select('*')
+            ->join('concours', 'concours.concours_IdJeux = jeux.Id_jeux')
+            ->join('zone', 'zone.SupportZone_zone = concours.concours_SupportZone')
+            ->where('SupportZone_zone', $nomSupport)
+            ->orderBy('jeux_Nom', 'ASC');
         $query = $builder->get();
         if($query->getFieldCount()>0){
             return $query->getResult();

@@ -18,7 +18,7 @@ class c_accueil extends BaseController
     public function espaceNintendo()
     {
         $lesJeux=new m_jeux();
-        $support="Nintendo";
+        $support="Switch";
         $data['jeux']=$lesJeux->getLesJeuxSupport($support);
         $data['titre'] = "Espace Nintendo";
         return
