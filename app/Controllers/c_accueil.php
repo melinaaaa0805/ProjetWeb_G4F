@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use CodeIgniter\Config\Services;
 use App\Models\m_jeux;
+use App\Models\m_place;
+
 class c_accueil extends BaseController
 {
     public function index()
@@ -18,8 +20,10 @@ class c_accueil extends BaseController
     public function espaceNintendo()
     {
         $lesJeux=new m_jeux();
+        $lesLots=new m_place();
         $support="Switch";
         $data['jeux']=$lesJeux->getLesJeuxSupport($support);
+        $data['lots']=$lesLots->getLesLots($support);
         $data['titre'] = "Espace Nintendo";
         return
             view('v_menu')

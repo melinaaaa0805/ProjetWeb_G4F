@@ -16,6 +16,9 @@
 
     <!-- Vendor CSS -->
     <?php echo link_tag( 'public/assets/vendor/aos/aos.css');?>
+    <?php echo link_tag( 'public/assets/vendor/icofont/icofont.min.css');?>
+    <?php echo link_tag( 'public/assets/vendor/animate.css/animate.min.css');?>
+    <?php echo link_tag( 'public/assets/vendor/venobox/venobox.css');?>
     <?php echo link_tag( 'public/assets/vendor/bootstrap/css/bootstrap.min.css');?>
     <?php echo link_tag( 'public/assets/vendor/bootstrap-icons/bootstrap-icons.css');?>
     <?php echo link_tag( 'public/assets/vendor/boxicons/css/boxicons.min.css');?>
@@ -23,6 +26,7 @@
     <?php echo link_tag( 'public/assets/vendor/remixicon/remixicon.css');?>
     <?php echo link_tag( 'public/assets/vendor/swiper/swiper-bundle.min.css');?>
     <?php echo link_tag( 'public/assets/css/style.css');?>
+    <?php echo link_tag( 'public/assets/css/css_jeux.css');?>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"
@@ -49,14 +53,14 @@
             ?>
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active">
-                        <?=anchor(base_url().'/public/', 'Accueil')?></a></li>
+                <li><a>
+                        <?=anchor(base_url().'/public/', 'Accueil',['class' => 'nav-link scrollto active'])?></a></li>
                 <li><a class="nav-link scrollto">
-                        <?=anchor(base_url().'/public/', 'Section Cybersécurité')?></a></li>
+                        <?=anchor(base_url().'/public/', 'Section Cybersécurité',['class' => 'nav-link scrollto'])?></a></li>
                 <li><a class="nav-link scrollto">
-                        <?=anchor(base_url().'/public/', 'Section Cosplay')?></a></li>
+                        <?=anchor(base_url().'/public/', 'Section Cosplay',['class' => 'nav-link scrollto'])?></a></li>
                 <li class="dropdown"><a><span>
-                        <?=anchor(base_url().'/public/presentation', 'Section tournois')?></span> </a>
+                        <?=anchor(base_url().'/public/presentation', 'Section tournois',['class' => 'dropdown'])?></span> </a>
                     <ul>
                         <li><a><?=anchor(base_url().'/public/', 'Présentation')?></a></li>
                         <li><a><?=anchor(base_url().'/public/espaceNintendo/', 'Espace Nintendo')?></a></li>
@@ -64,7 +68,7 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto">
-                        <?=anchor(base_url().'/public/', 'Nous contacter')?></a></li>
+                        <?=anchor(base_url().'/public/', 'Nous contacter',['class' => 'nav-link scrollto'])?></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

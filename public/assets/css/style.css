@@ -1340,3 +1340,6 @@ section {
   position:center;
   margin: 7%;
 }
+.carousel-item{
+  width: 60%;
+}

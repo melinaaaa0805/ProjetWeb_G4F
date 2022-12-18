@@ -38,6 +38,12 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'c_accueil::index');
 $routes->get('espaceNintendo/', 'c_accueil::espaceNintendo');
+$routes->get('espaceNintendo/SuperSmach', 'c_jeux::superSmach');
+$routes->get('espaceNintendo/MarioStrikersBattleLeague', 'c_jeux::mario');
+$routes->get('espaceNintendo/NintendoSwitchSports', 'c_jeux::switchSports');
+$routes->get('espaceNintendo/JustDance', 'c_jeux::justDance');
+$routes->get('espaceNintendo/StreetFighter', 'c_jeux::streetFighter');
+
 $routes->match(['get', 'post'], 'login', 'c_accueil::login');
 
 /*

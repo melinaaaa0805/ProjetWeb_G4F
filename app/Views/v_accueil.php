@@ -161,7 +161,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box">
                         <?php
-                        $propieteImage = ['src' => '/public/assets/img/nintendo/marioStrikers/MarioStrikersBattleLeagueFootball.jpg',
+                        $propieteImage = ['src' => '/public/assets/img/nintendo/4/MarioStrikersBattleLeagueFootball.jpg',
                             'alt' => 'Mario Strikers : Battle League Football',
                             'class' => 'icon'];
                         echo img($propieteImage);
@@ -174,7 +174,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-box">
                         <?php
-                        $propieteImage = ['src' => '/public/assets/img/nintendo/switchSport/NintendoSwitchSports.png',
+                        $propieteImage = ['src' => '/public/assets/img/nintendo/5/NintendoSwitchSports.png',
                             'alt' => 'Nintendo Switch Sports',
                             'class' => 'icon'];
                         echo img($propieteImage);
@@ -187,7 +187,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box">
                         <?php
-                        $propieteImage = ['src' => '/public/assets/img/nintendo/streetFighter/StreetFighter6.jpg',
+                        $propieteImage = ['src' => '/public/assets/img/nintendo/6/StreetFighter6.jpg',
                             'alt' => 'Street Fighter 6',
                             'class' => 'icon'];
                         echo img($propieteImage);

@@ -22,4 +22,18 @@ class m_jeux extends \CodeIgniter\Model
             return false;
         }
     }
+
+    ///retourne un jeu en fonction de son id
+    public function getUnJeu($id){
+        $db=db_connect();
+        $builder=$db->table('jeux');
+        $query = $builder->getWhere(['Id_jeux'=>$id]);
+
+        if($query->getFieldCount()>0){
+            return $query->getResult();
+
+        }else {
+            return false;
+        }
+    }
 }
