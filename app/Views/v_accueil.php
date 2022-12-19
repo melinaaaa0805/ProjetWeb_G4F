@@ -167,7 +167,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">Mario Strikers : Battle League Football</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/espaceNintendo/MarioStrikersBattleLeague', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
 
@@ -180,7 +180,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">Nintendo Switch Sports</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/espaceNintendo/NintendoSwitchSports', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
 
@@ -193,7 +193,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">Street Fighter 6</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/espaceNintendo/StreetFighter', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
 
@@ -210,7 +210,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">NBA 2K23</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
 
@@ -223,7 +223,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">Overwatch 2</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
 
@@ -236,7 +236,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">Halo Infinite</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
                 <div class="section-title">
@@ -252,7 +252,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">Gran Turismo 7</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
 
@@ -265,7 +265,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">F1 22</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
 
@@ -278,7 +278,7 @@
                         echo img($propieteImage);
                         ?>
                         <h4><a href="">Arkanoid Eternal Battle</a></h4>
-                        <p>Découvrir ce jeu</p>
+                        <p><?=anchor(base_url().'/public/', 'Découvrir ce jeu')?></p>
                     </div>
                 </div>
 
