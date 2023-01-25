@@ -40,4 +40,12 @@ class c_accueil extends BaseController
             .view('v_espace',$data)
             . view('v_footer');
     }
+
+    public function inscription()
+    {
+        return
+            view('v_menu')
+            .view('v_inscription')
+            .view('v_footer');
+    }
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
     <!-- Favicons -->
@@ -15,18 +15,20 @@
     400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS -->
-    <?php echo link_tag( 'public/assets/vendor/aos/aos.css');?>
-    <?php echo link_tag( 'public/assets/vendor/icofont/icofont.min.css');?>
-    <?php echo link_tag( 'public/assets/vendor/animate.css/animate.min.css');?>
-    <?php echo link_tag( 'public/assets/vendor/venobox/venobox.css');?>
-    <?php echo link_tag( 'public/assets/vendor/bootstrap/css/bootstrap.min.css');?>
-    <?php echo link_tag( 'public/assets/vendor/bootstrap-icons/bootstrap-icons.css');?>
-    <?php echo link_tag( 'public/assets/vendor/boxicons/css/boxicons.min.css');?>
-    <?php echo link_tag( 'public/assets/vendor/glightbox/css/glightbox.min.css');?>
-    <?php echo link_tag( 'public/assets/vendor/remixicon/remixicon.css');?>
-    <?php echo link_tag( 'public/assets/vendor/swiper/swiper-bundle.min.css');?>
-    <?php echo link_tag( 'public/assets/css/style.css');?>
-    <?php echo link_tag( 'public/assets/css/css_jeux.css');?>
+    <?php
+     echo link_tag( 'public/assets/vendor/aos/aos.css');
+//     echo link_tag( 'public/assets/vendor/icofont/icofont.min.css');
+//     echo link_tag( 'public/assets/vendor/animate.css/animate.min.css');
+//     echo link_tag( 'public/assets/vendor/venobox/venobox.css');
+     echo link_tag( 'public/assets/vendor/bootstrap/css/bootstrap.min.css');
+     echo link_tag( 'public/assets/vendor/bootstrap-icons/bootstrap-icons.css');
+     echo link_tag( 'public/assets/vendor/boxicons/css/boxicons.min.css');
+     echo link_tag( 'public/assets/vendor/glightbox/css/glightbox.min.css');
+     echo link_tag( 'public/assets/vendor/remixicon/remixicon.css');
+     echo link_tag( 'public/assets/vendor/swiper/swiper-bundle.min.css');
+     echo link_tag( 'public/assets/css/style.css');
+     echo link_tag( 'public/assets/css/css_jeux.css');
+     ?>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"
@@ -34,6 +36,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timecircles/1.5.3/TimeCircles.min.js"
             integrity="sha512-FofOhk0jW4BYQ6CFM9iJutqL2qLk6hjZ9YrS2/OnkqkD5V4HFnhTNIFSAhzP3x//AD5OzVMO8dayImv06fq0jA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- Template Main CSS -->
 
@@ -67,13 +73,12 @@
                         <li><a><?=anchor(base_url().'/public/', 'Espace Next GEN')?></a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto">
-                        <?=anchor(base_url().'/public/', 'Nous contacter',['class' => 'nav-link scrollto'])?></a></li>
+                <li><a class="nav-link scrollto"><?=anchor(base_url().'/public/', 'Nous contacter',['class' => 'nav-link scrollto'])?></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
-        <a class="get-started-btn scrollto" href="">S'inscrire / Se connecter</a>
+        <?= anchor(base_url()."/public/inscription", "S'inscrire / Se connecter", ['class' => 'get-started-btn scrollto']) ?>
 
     </div>
 </header><!-- End Header -->

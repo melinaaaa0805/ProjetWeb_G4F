@@ -43,6 +43,7 @@ $routes->get('espaceNintendo/MarioStrikersBattleLeague', 'c_jeux::mario');
 $routes->get('espaceNintendo/NintendoSwitchSports', 'c_jeux::switchSports');
 $routes->get('espaceNintendo/JustDance', 'c_jeux::justDance');
 $routes->get('espaceNintendo/StreetFighter', 'c_jeux::streetFighter');
+$routes->get('inscription', 'c_accueil::inscription');
 
 $routes->match(['get', 'post'], 'login', 'c_accueil::login');
 
