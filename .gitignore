@@ -44,8 +44,6 @@ $RECYCLE.BIN/
 .env
 .vagrant
 Vagrantfile
-#Fichier des credentials, a ne pas activer pour preserver la securité
-app/Config/Database.php
 
 #-------------------------
 # Temporary Files
