@@ -34,7 +34,7 @@ class Database extends Config
         'DSN'      => '',
         'hostname' => '141.94.37.248',
         'username' => 'geek4fun',
-        'password' => 'NS8rgdS@CtRR6T',
+        'password' => 'pY9orkyp*2mc8R',
         'database' => 'geek4fun',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',

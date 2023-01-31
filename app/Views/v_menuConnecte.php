@@ -79,7 +79,20 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
-        <?= anchor(base_url().'/public/inscription/', "S'inscrire / Se connecter", ['class' => 'get-started-btn scrollto']) ?>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+        <?= anchor(base_url()."/public/", "Mon espace", ['class' => 'get-started-btn scrollto']) ?>
+                <ul>
+                        <ul>
+                            <li><a><?=anchor(base_url().'/public/', 'Mes informations')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/', 'Mes votes')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/', 'Mes inscriptions')?></a>
+                            <li><a><?=anchor(base_url().'/public/', 'Mes avis')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/', 'Déconnexion')?></a></li>
 
+                        </ul>
+                </ul>
+                    </li>
+            </nav>
     </div>
 </header><!-- End Header -->
+

@@ -8,19 +8,33 @@ class m_user extends \CodeIgniter\Model
     {
         $db = \Config\Database::connect();
         $builder =  $db->table('user');
-        $querry = $builder->getWhere(['loginUser'=>$valeur]);
-        if ($querry->getFieldCount()>0)
+        $query = $builder->getWhere(['login_User'=>$valeur]);
+        if ($query->getFieldCount()>0)
         {
-            return $querry->getResult()[0];
+            return $query;
         }
         else
         {
             return false;
         }
     }
-    public function ajoutUtilisateur($info)
+    public function ajoutUser($info)
     {
         $db = \Config\Database::connect();
         $query = $db->table('user')->insert($info);
+    }
+    public function connexion($login, $mdp)
+    {
+        $db = \Config\Database::connect();
+        $builder =  $db->table('user');
+        $query = $builder->getWhere(['login_User'=>$login,'user_Mdp'=>$mdp]);
+        if ($query->getFieldCount()>0)
+        {
+            return $query;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -44,8 +44,14 @@ $routes->get('espaceNintendo/NintendoSwitchSports', 'c_jeux::switchSports');
 $routes->get('espaceNintendo/JustDance', 'c_jeux::justDance');
 $routes->get('espaceNintendo/StreetFighter', 'c_jeux::streetFighter');
 
-$routes->match(['get', 'post'],'inscription', 'c_accueil::inscription');
-$routes->match(['get', 'post'], 'login', 'c_accueil::login');
+$routes->match(['get', 'post'], 'login/', 'c_connexion::index');
+$routes->match(['get', 'post'], 'inscription/', 'c_connexion::ajoutUser');
+$routes->match(['get', 'post'], 'connexion/', 'c_connexion');
+$routes->get('/deconnexion', 'c_connexion::deconnexion');
+$routes->match(['get', 'post'], 'ajoutUtilisateur/', 'c_connexion::ajoutUser');
+
+
+
 
 /*
  * --------------------------------------------------------------------

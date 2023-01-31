@@ -35,17 +35,42 @@ class c_accueil extends BaseController
     {
         $data['titre'] = "Se Connecter ...";
         $data['validation'] = Services::validation();
+        $unUser=new m_user();
+        if ($data['User']=$unUser->verifUser($data)) {
+            return
+                view('v_menu')
+                . view('v_espace', $data)
+                . view('v_footer');
+        }
+        else {
+            $data['connexion']="Mot de passe ou login incorrect";
+            return
+                view('v_menu')
+                . view('v_connexion', $data)
+                . view('v_footer');
+        }
+    }
+public function inscription()
+{
+    $data['titre']="Inscription";
+    $data['validation'] = \CodeIgniter\Config\Services::validation();
+    return
+        view('v_menu')
+        .view('v_inscription',$data)
+        . view('v_footer');
+
+}
+    public function connexion()
+    {
+        $data['titre']="Connexion";
         return
             view('v_menu')
-            .view('v_espace',$data)
+            .view('v_connexion')
             . view('v_footer');
     }
 
-    public function inscription()
+    public function mesinfos()
     {
-        return
-            view('v_menu')
-            .view('v_inscription')
-            .view('v_footer');
+
     }
 }
