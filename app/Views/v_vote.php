@@ -4,7 +4,8 @@
     <div class="w-50 mx-auto">
         <?= form_open(base_url()."/public/monvote"); ?>
     <label for="jeux">Les jeux</label>
-    <select name="jeux" id="jeux" size="4">
+    <br>
+    <select name="jeux" id="jeux" size="3">
         <option value="<?php echo $jeux[0]->jeux_Nom?>>"><?php echo $jeux[0]->jeux_Nom?></option>
         <option value="<?php echo $jeux[1]->jeux_Nom?>"><?php echo $jeux[1]->jeux_Nom?></option>
         <option value="<?php echo $jeux[2]->jeux_Nom?>"><?php echo $jeux[2]->jeux_Nom?></option>
