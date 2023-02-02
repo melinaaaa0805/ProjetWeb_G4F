@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use Config\Services;
 use App\Models\m_user;
-
+use App\Models\m_vote;
 class c_user extends BaseController
 {
     public function suppression() {
@@ -84,7 +84,7 @@ class c_user extends BaseController
                         .view ('v_footer');
                 }
                 else {
-                    $info['titre']="La modification a échoué, réessayez ultérieurement";
+                    $info['titre']= 'La modification a échoué, réessayez ultérieurement';
                     return
                         view('v_menuConnecte')
                         .view('v_modifInfo',$info)
@@ -93,11 +93,41 @@ class c_user extends BaseController
             }
             ///Modification échouée
         else {
-            $info['titre']="La modification a échoué, corrigez votre saisie";
+            $info['titre']= 'La modification a échoué, corrigez votre saisie';
             $info['validation'] = $this->validator;
             return
                 view('v_menuConnecte')
                 .view('v_modifInfo', $info)
                 .view ('v_footer');
         }}}
+    public function votePage(){
+        $nomSupport= 'Nintendo';
+        $model= new m_vote();
+        $result=$model->aVote(session()->get('login'), $nomSupport);
+        if ($result==false)
+        {
+            $info['voteNintendo']=0;
+            $info['concoursNintendo']=null;
+        }
+        else
+        {
+            $info['concoursNintendo']=$result;
+        }
+        $nomSupport= 'NextGen';
+        $model= new m_vote();
+        $result=$model->aVote(session()->get('login'), $nomSupport);
+        if ($result==false)
+        {
+            $info['voteNextGen']=0;
+            $info['concoursNextGen']=null;
+        }
+        else
+        {
+            $info['concoursNextGen']=$result;
+        }
+        return
+            view('v_menuConnecte')
+            .view('v_mesvotes', $info)
+            .view ('v_footer');
+    }
 }

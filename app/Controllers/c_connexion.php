@@ -10,13 +10,10 @@ class c_connexion extends BaseController
     public function index()
     {
         $controle = $this->request->getPost('submit');
-        if(isset($controle)==false)
+        if($controle==null)
         {
             $info['titre'] = "Me connecter";
             $info['validation'] = \CodeIgniter\Config\Services::validation();
-            return view('v_menu')
-                .view('v_connexion', $info)
-                .view('v_footer');
         }
         else{
         $validation = Services::validation();
@@ -82,7 +79,9 @@ class c_connexion extends BaseController
                 .view('v_connexion', $info)
                 .view('v_footer');
         }
-    }}
+    }return view('v_menu')
+        .view('v_connexion', $info)
+        .view('v_footer');}
 
     public function deconnexion()
     {

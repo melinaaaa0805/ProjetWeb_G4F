@@ -44,6 +44,7 @@ $routes->get('espaceNintendo/NintendoSwitchSports', 'c_jeux::switchSports');
 $routes->get('espaceNintendo/JustDance', 'c_jeux::justDance');
 $routes->get('espaceNintendo/StreetFighter', 'c_jeux::streetFighter');
 
+$routes->match(['get', 'post'], 'login/', 'c_connexion::index');
 $routes->match(['get', 'post'], 'espace/', 'c_connexion::info');
 $routes->match(['get', 'post'], 'inscription/', 'c_connexion::ajoutUser');
 $routes->match(['get', 'post'], 'connexion/', 'c_connexion::index');
@@ -53,6 +54,9 @@ $routes->match(['get', 'post'], '/', 'c_accueil::index');
 $routes->match(['get', 'post'], 'modification/', 'c_connexion::modifInfo');
 $routes->match(['get', 'post'], 'modificationInfo/', 'c_user::modificationInfo');
 $routes->match(['get', 'post'], 'suppression/', 'c_user::suppression');
+$routes->match(['get', 'post'], 'monvote/', 'c_user::votePage');
+$routes->match(['get', 'post'], 'mesvotes/', 'c_user::mesvotes');
+
 
 
 
