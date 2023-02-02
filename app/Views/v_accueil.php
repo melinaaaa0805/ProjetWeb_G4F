@@ -1,3 +1,5 @@
+<?php
+$session = \Config\Services::session();?>
 <!-- ======= Hero Section ======= -->
 <title><?php echo $titre ?></title>
 <section id="hero" class="d-flex align-items-center justify-content-center">

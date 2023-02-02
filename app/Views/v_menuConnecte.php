@@ -80,16 +80,15 @@
         </nav><!-- .navbar -->
 
             <nav id="navbar" class="navbar order-last order-lg-0">
+                <li class="dropdown"><a><span>
         <?= anchor(base_url()."/public/", "Mon espace", ['class' => 'get-started-btn scrollto']) ?>
                 <ul>
-                        <ul>
-                            <li><a><?=anchor(base_url().'/public/', 'Mes informations')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/espace', 'Mes informations')?></a></li>
                             <li><a><?=anchor(base_url().'/public/', 'Mes votes')?></a></li>
                             <li><a><?=anchor(base_url().'/public/', 'Mes inscriptions')?></a>
                             <li><a><?=anchor(base_url().'/public/', 'Mes avis')?></a></li>
-                            <li><a><?=anchor(base_url().'/public/', 'Déconnexion')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/deconnexion', 'Déconnexion')?></a></li>
 
-                        </ul>
                 </ul>
                     </li>
             </nav>

@@ -22,12 +22,11 @@ class c_connexion extends BaseController
         $validation->setRules($rules, $errors);
         if ($this->validate($rules, $errors))
         {
-            $session = \Config\Services::session();
+            $session = Services::session();
             $loginUser = $this->request->getPost('login');
-            $mdp=password_hash($this->request->getPost('password'),PASSWORD_DEFAULT);
             $model = new m_user();
-            $test = $model->connexion($loginUser,$mdp);
-            if($test == false)
+            $result=$model->verifUser($loginUser);
+            if($result[0]==false)
             {
                 $info['titre'] = "Mot de passe et/ou identifiant incorrect";
                 $info['validation'] = $this->validator;
@@ -38,21 +37,31 @@ class c_connexion extends BaseController
             }
             else
             {
-                $niveau = $session-> get('niveau');
-                if($niveau="1") {
-                    $session->set('login', $this->request->getPost('login'));
-                    $session->set('password', $this->request->getPost('password'));
-                    $data['titre']="Bienvenu".$this->request->getPost('login');
+                $mdpUser=$result[0]->user_Mdp;
+                $verifPwd = password_verify($this->request->getPost('password'),$mdpUser);
+                if($verifPwd==true & $result[0]->user_Niveau=1) {
+                            $session->set('login', $result[0]->login_User);
+                            $session->set('email',$result[0]->user_AdresseMail);
+                            $session->set('nom',$result[0]->user_Nom);
+                            $session->set('prenom', $result[0]->user_Prenom);
+                            $session->set('dateNaissance', $result[0]->user_DateNaissance);
+                            $session->set('age',$result[0]->user_Age);
+                            $session->set('password',$result[0]->user_Mdp);
+                            $session->set('niveau',$result[0]->user_Niveau);
+                            $data['titre']="Bienvenu ".$this->request->getPost('login');
                     return view('v_menuConnecte')
                         . view('v_accueil',$data)
                         . view('v_footer');
                 }
-
-                if($niveau = 2){
-                    return view('v_menuConnecteAdmin')
-                        .view('v_accueil')
+                else {
+                    $info['titre'] = "Mot de passe et/ou identifiant incorrect 2";
+                    $info['validation'] = $this->validator;
+                    $session->setFlashdata('resultConnect', 'Utilisateur non trouvé');
+                    return view('v_menu')
+                        .view('v_connexion', $info)
                         .view('v_footer');
                 }
+
             }
         }
         else
@@ -70,9 +79,9 @@ class c_connexion extends BaseController
         $session = \Config\Services::session();
         $session->remove('login');
         $session->destroy();
-        $data['title'] = "déconnexion réussie";
+        $data['titre'] = "Déconnexion réussie";
         return view('v_menu')
-            .view('v_corpsAccueil', $data)
+            .view('v_accueil', $data)
             .view('v_footer');
     }
 
@@ -121,7 +130,7 @@ class c_connexion extends BaseController
 
                 ///calcul de l'âge en fonction de la date naissance
                 $datetime1 = date_create($this->request->getPost('dateNaissance')); // Date fixe
-               $datetime2 = date_create('now'); // Date fixe
+                $datetime2 = date_create('now'); // Date fixe
                 $interval = date_diff($datetime1, $datetime2);
                 $age=$interval->format('%y années');
 
@@ -136,24 +145,36 @@ class c_connexion extends BaseController
                     'user_Mdp' => password_hash($this->request->getPost('password'),PASSWORD_DEFAULT),
                     'user_Niveau'=>1
                 );
-                $model1=new m_user();
-                $model = new m_user();
-                $doublon=$model1->verifUser($this->request->getPost('login'));
-                if ($doublon) {
+                $model=new m_user();
+                $login=$this->request->getPost('login');
+                $doublon=$model->verifUser($login);
+                if ($doublon<>false) {
                    $info['titre'] = "Le login que vous avez choisi est déjà utilisé";
                    $info['validation'] = $this->validator;
                 }
-            else
-               $model->ajoutUser($data);
+            else {
+                $test=$model->ajoutUser($data);
+                if ($test){
                 $info['titre'] = "Votre compte a bien été créé, veuillez vous connecter";
                 return
                     view('v_menu')
                     .view('v_connexion',$info)
-                    .view('v_footer');
+                    .view('v_footer');}
             }}
+        else{
+        $info['titre'] = "Connexion impossible, Corrigez votre saisie";
+        $info['validation'] = $this->validator;}}
         return
             view('v_menu')
             .view('v_inscription',$info)
+            .view('v_footer');
+    }
+
+    public function info()
+    {
+        return
+            view('v_menuConnecte')
+            .view('v_espace')
             .view('v_footer');
     }
 }
