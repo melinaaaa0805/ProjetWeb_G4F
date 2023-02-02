@@ -44,7 +44,7 @@
         <div class="d-flex justify-content-center">
             <input class="btn btn-success mx-auto fs-4 py-1 px-3" type="submit" name ="submit" value="Valider">
         </div>
-        <a><?=anchor(base_url().'/public/connexion', 'Déjà inscrit(e) ? Cliquez ici pour vous connecter.')?></a>
+        <a><?=anchor(base_url().'/public/connexion/', 'Déjà inscrit(e) ? Cliquez ici pour vous connecter.')?></a>
 
         <?= form_close(); ?>
     </div>

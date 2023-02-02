@@ -10,7 +10,7 @@ class c_user extends BaseController
     public function suppression() {
 
     }
-
+///modification des informations
     public function modificationInfo() {
         $session = Services::session();
         $controle = $this->request->getPost('submit');
@@ -66,6 +66,7 @@ class c_user extends BaseController
 
                 $user= new m_user();
                 $modif=$user->modifInfos($data,session()->get('login'));
+                /// si la modification a été réalisée retour sur l'espace mes informations
                 if ($modif){
                     $info['titre']="La modification a bien été effectué";
                     $result=$user->verifUser(session()->get('login'));
@@ -90,6 +91,7 @@ class c_user extends BaseController
                         .view ('v_footer');
                 }
             }
+            ///Modification échouée
         else {
             $info['titre']="La modification a échoué, corrigez votre saisie";
             $info['validation'] = $this->validator;

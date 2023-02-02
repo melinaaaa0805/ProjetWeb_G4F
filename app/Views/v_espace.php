@@ -1,5 +1,6 @@
 <section class="mt-5 pb-5">
     <h1 class="text-center">Mes informations</h1>
+    <!-- Affichage des informations de l'utilisateur -->
     <div class="w-50 mx-auto">
         <label class="form-label" for="pseudo">Pseudo :</label>
         <input class="form-control mb-3" type="text" name="pseudo" id="pseudo"

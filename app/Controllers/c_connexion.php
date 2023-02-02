@@ -9,6 +9,16 @@ class c_connexion extends BaseController
 {
     public function index()
     {
+        $controle = $this->request->getPost('submit');
+        if(isset($controle)==false)
+        {
+            $info['titre'] = "Me connecter";
+            $info['validation'] = \CodeIgniter\Config\Services::validation();
+            return view('v_menu')
+                .view('v_connexion', $info)
+                .view('v_footer');
+        }
+        else{
         $validation = Services::validation();
         $rules = [
             'login' => 'required|min_length[5]',
@@ -72,7 +82,7 @@ class c_connexion extends BaseController
                 .view('v_connexion', $info)
                 .view('v_footer');
         }
-    }
+    }}
 
     public function deconnexion()
     {
@@ -90,7 +100,7 @@ class c_connexion extends BaseController
         $controle = $this->request->getPost('submit');
         if(isset($controle)==false)
         {
-            $info['titre'] = "Ajouter un nouvel utilisateur";
+            $info['titre'] = "Créer mon compte";
             $info['validation'] = \CodeIgniter\Config\Services::validation();
         }
         else
@@ -184,7 +194,7 @@ class c_connexion extends BaseController
         $data['validation'] = \CodeIgniter\Config\Services::validation();
         $data['titre']="Modifier mes informations";
         return
-            view('v_menu')
+            view('v_menuConnecte')
             .view('v_modifInfo',$data)
             . view('v_footer');
     }

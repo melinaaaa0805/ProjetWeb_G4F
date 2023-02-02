@@ -1,6 +1,7 @@
 <section class="mt-5 pb-5">
     <h1 class="text-center">Mes informations</h1>
     <h4><?php $titre?></h4>
+    <!-- Affichage des informations de l'utilisateur pour la modification -->
     <div class="w-50 mx-auto">
         <div class="w-50 mx-auto">
             <?= form_open(base_url()."/public/modificationInfo"); ?>
