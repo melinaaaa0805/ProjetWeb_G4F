@@ -101,33 +101,74 @@ class c_user extends BaseController
                 .view ('v_footer');
         }}}
     public function votePage(){
-        $nomSupport= 'Nintendo';
+        $nomSupport= 'Switch';
         $model= new m_vote();
         $result=$model->aVote(session()->get('login'), $nomSupport);
         if ($result==false)
         {
-            $info['voteNintendo']=0;
-            $info['concoursNintendo']=null;
+            $info['voteSwitch']=0;
         }
         else
         {
-            $info['concoursNintendo']=$result;
+            $info['concoursSwitch']=$result;
         }
-        $nomSupport= 'NextGen';
+        $nomSupport= 'Playstation';
         $model= new m_vote();
         $result=$model->aVote(session()->get('login'), $nomSupport);
         if ($result==false)
         {
-            $info['voteNextGen']=0;
-            $info['concoursNextGen']=null;
+            $info['votePlaystation']=0;
         }
         else
         {
             $info['concoursNextGen']=$result;
+        }
+        $nomSupport= 'Xbox';
+        $model= new m_vote();
+        $result=$model->aVote(session()->get('login'), $nomSupport);
+        if ($result==false)
+        {
+            $info['voteXbox']=0;
+        }
+        else
+        {
+            $info['concoursXbox']=$result;
         }
         return
             view('v_menuConnecte')
             .view('v_mesvotes', $info)
             .view ('v_footer');
     }
+    public function mesvotesSwitch(){
+        $model=new m_vote();
+        $info['jeux']=$model->recupJeuVote(4,5,6);
+        return
+            view('v_menuConnecte')
+            .view('v_vote', $info)
+            .view ('v_footer');
+    }
+    public function mesvotesPlaystation(){
+        $model=new m_vote();
+        $info['jeux']=$model->recupJeuVote(7,8,9);
+        return
+            view('v_menuConnecte')
+            .view('v_vote', $info)
+            .view ('v_footer');
+    }
+    public function mesvotesXbox(){
+        $model=new m_vote();
+        $result=$model->recupJeuVote(1,2,3);
+        if ($result==false){
+                return
+                    view('v_menuConnecte')
+                    .view('v_accueil')
+                    .view ('v_footer');
+        }
+        else{
+            $info['jeux']=$result;
+        return
+            view('v_menuConnecte')
+            .view('v_vote',$info)
+            .view ('v_footer');
+    }}
 }
