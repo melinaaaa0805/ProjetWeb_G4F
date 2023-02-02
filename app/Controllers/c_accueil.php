@@ -30,7 +30,7 @@ class c_accueil extends BaseController
             .view('v_espaceNintendo',$data)
             . view('v_footer');
     }
-
+/// retourne la page login
     public function login()
     {
         $data['titre'] = "Se Connecter ...";
@@ -50,6 +50,7 @@ class c_accueil extends BaseController
                 . view('v_footer');
         }
     }
+    /// retourne la page inscription
 public function inscription()
 {
     $data['titre']="Inscription";
@@ -60,6 +61,7 @@ public function inscription()
         . view('v_footer');
 
 }
+/// retourne la page connexion
     public function connexion()
     {
         $data['titre']="Connexion";

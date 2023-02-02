@@ -134,7 +134,7 @@ class c_connexion extends BaseController
                 $interval = date_diff($datetime1, $datetime2);
                 $age=$interval->format('%y années');
 
-
+                /// initialisation d'un tableau pour créer l'utilisateur
                 $data = array(
                     'login_User' => $this->request->getPost('login'),
                     'user_AdresseMail' => $this->request->getPost('email'),
@@ -148,10 +148,12 @@ class c_connexion extends BaseController
                 $model=new m_user();
                 $login=$this->request->getPost('login');
                 $doublon=$model->verifUser($login);
+                ///vérification du login
                 if ($doublon<>false) {
                    $info['titre'] = "Le login que vous avez choisi est déjà utilisé";
                    $info['validation'] = $this->validator;
                 }
+                ///ajout de l'utilisateur
             else {
                 $test=$model->ajoutUser($data);
                 if ($test){
