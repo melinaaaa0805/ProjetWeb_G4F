@@ -51,6 +51,10 @@ $routes->match(['get', 'post'], 'connexion/', 'c_connexion');
 $routes->get('/deconnexion', 'c_connexion::deconnexion');
 $routes->match(['get', 'post'], 'ajoutUtilisateur/', 'c_connexion::ajoutUser');
 $routes->match(['get', 'post'], '/', 'c_accueil::index');
+$routes->match(['get', 'post'], 'modification/', 'c_connexion::modifInfo');
+$routes->match(['get', 'post'], 'modificationInfo/', 'c_user::modificationInfo');
+$routes->match(['get', 'post'], 'suppression/', 'c_user::suppression');
+
 
 
 

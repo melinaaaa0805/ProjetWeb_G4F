@@ -25,5 +25,6 @@
         <input class="form-control mb-4" type="password" name="password" id="password"
                disabled value="<?php echo session()->get('password');?>" required>
     </div>
-    
+    <?= anchor(base_url().'/public/modification/', "Modifier mes infos", ['class' => 'get-started-btn scrollto']) ?>
+    <?= anchor(base_url().'/public/suppression/', "Supprimer mon compte", ['class' => 'get-started-btn scrollto']) ?>
 </section>

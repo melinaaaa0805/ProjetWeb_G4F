@@ -50,4 +50,21 @@ class m_user extends \CodeIgniter\Model
             return false;
         }
     }
+    public function modifInfos($info, $login)
+    {
+
+        $db = \Config\Database::connect();
+        $builder =  $db->table('user')
+            ->where('login_User', $login);
+        $query = $builder->update($info);
+
+        if ($query)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -179,4 +179,13 @@ class c_connexion extends BaseController
             .view('v_espace')
             .view('v_footer');
     }
+    public function modifInfo()
+    {
+        $data['validation'] = \CodeIgniter\Config\Services::validation();
+        $data['titre']="Modifier mes informations";
+        return
+            view('v_menu')
+            .view('v_modifInfo',$data)
+            . view('v_footer');
+    }
 }

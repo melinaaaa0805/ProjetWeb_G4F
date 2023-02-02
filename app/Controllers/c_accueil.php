@@ -71,8 +71,4 @@ public function inscription()
             . view('v_footer');
     }
 
-    public function mesinfos()
-    {
-
-    }
 }
