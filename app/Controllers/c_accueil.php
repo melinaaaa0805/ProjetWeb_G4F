@@ -8,14 +8,24 @@ use App\Models\m_place;
 
 class c_accueil extends BaseController
 {
+    /// retourne la page index et le menu en fonction de la connexion
     public function index()
     {
+        Services::session();
+        if (session()->get('login')==null){
+            $data['titre'] = "Accueil";
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
         $data['titre'] = "Accueil";
         return
-            view('v_menu')
+            view('v_menuConnecte')
             .view('v_accueil',$data)
             . view('v_footer');
-    }
+    }}
     ///retourne la page espace nintendo avec tous les jeux nintendo
     public function espaceNintendo()
     {

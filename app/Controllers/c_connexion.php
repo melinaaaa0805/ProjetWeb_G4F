@@ -7,6 +7,7 @@ use DateTime;
 
 class c_connexion extends BaseController
 {
+    ///Gestion de la connexion
     public function index()
     {
         $controle = $this->request->getPost('submit');
@@ -83,6 +84,7 @@ class c_connexion extends BaseController
         .view('v_connexion', $info)
         .view('v_footer');}
 
+    ///Gestion de la decconnexion
     public function deconnexion()
     {
         $session = \Config\Services::session();
@@ -93,7 +95,7 @@ class c_connexion extends BaseController
             .view('v_accueil', $data)
             .view('v_footer');
     }
-
+    ///Gestion de l'inscription
     public function ajoutUser()
     {
         $controle = $this->request->getPost('submit');
@@ -181,6 +183,7 @@ class c_connexion extends BaseController
             .view('v_footer');
     }
 
+    ///Gestion de la page mes informations
     public function info()
     {
         return
@@ -188,6 +191,8 @@ class c_connexion extends BaseController
             .view('v_espace')
             .view('v_footer');
     }
+
+    ///Gestion de modification de la page mes informations
     public function modifInfo()
     {
         $data['validation'] = \CodeIgniter\Config\Services::validation();

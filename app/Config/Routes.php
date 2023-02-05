@@ -58,6 +58,8 @@ $routes->match(['get', 'post'], 'monvote/', 'c_user::votePage');
 $routes->match(['get', 'post'], 'mesvotes/playstation', 'c_user::mesvotesPlaystation');
 $routes->match(['get', 'post'], 'mesvotes/switch', 'c_user::mesvotesSwitch');
 $routes->match(['get', 'post'], 'mesvotes/xbox', 'c_user::mesvotesXbox');
+$routes->match(['get', 'post'], 'monvote/voter', 'c_user::ajoutVote');
+
 
 
 

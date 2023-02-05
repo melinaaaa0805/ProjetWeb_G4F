@@ -14,11 +14,19 @@ class c_jeux extends BaseController
         $id=10;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
         return
-            view('v_menu')
+            view('v_menuConnecte')
             .view('v_jeux',$data)
             . view('v_footer');
-    }
+    }}
+    ///renvoie la page v_jeux avec les informations de Mario
     public function mario()
     {
         $UnJeu=new m_jeux();
@@ -31,6 +39,7 @@ class c_jeux extends BaseController
             .view('v_jeux',$data)
             . view('v_footer');
     }
+    ///renvoie la page v_jeux avec les informations de SwitchSport
     public function switchSports()
     {
         $UnJeu=new m_jeux();
@@ -43,6 +52,7 @@ class c_jeux extends BaseController
             .view('v_jeux',$data)
             . view('v_footer');
     }
+    ///renvoie la page v_jeux avec les informations de StreetFighter
     public function streetFighter()
     {
         $UnJeu=new m_jeux();
@@ -55,6 +65,7 @@ class c_jeux extends BaseController
             .view('v_jeux',$data)
             . view('v_footer');
     }
+    ///renvoie la page v_jeux avec les informations de JustDance
     public function justDance()
     {
         $UnJeu=new m_jeux();

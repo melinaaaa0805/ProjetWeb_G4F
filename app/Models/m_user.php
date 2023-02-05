@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class m_user extends \CodeIgniter\Model
 {
-    // Fonction qui vérifie si le login n'est pas déjà utilisé
+    // Requête qui vérifie si le login n'est pas déjà utilisé
     public function verifUser($login)
     {
         $db=db_connect();
@@ -20,7 +20,7 @@ class m_user extends \CodeIgniter\Model
         }
     }
 
-    //Fonction qui ajoute un utilisateur dans la bdd
+    //Requête qui ajoute un utilisateur dans la bdd
     public function ajoutUser($info)
     {
         $db=db_connect();
@@ -35,7 +35,7 @@ class m_user extends \CodeIgniter\Model
         }
 
     }
-    //Fonction qui vérifie et connecte l'utilisateur
+    //Requête qui vérifie la connexion de l'utilisateur
     public function connexion($login, $mdp)
     {
         $db = \Config\Database::connect();
@@ -50,6 +50,7 @@ class m_user extends \CodeIgniter\Model
             return false;
         }
     }
+    ///requête qui modifie les informations de l'utilisateur
     public function modifInfos($info, $login)
     {
 

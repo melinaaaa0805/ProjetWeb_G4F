@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class m_vote extends \CodeIgniter\Model
 {
+    ///Requête qui vérifie si l'utilisateur a déjà voté
     public function aVote($login, $nomSupport){
         $db=db_connect();
-        $builder=$db->table('concours')->select('concours_Nom')
+        $array = ['concours_SupportZone' => $nomSupport, 'LoginUser_voter' => $login, 'voter_aVoter' => 1];
+        $builder=$db->table('concours')->select('*')
             ->join('voter', 'voter.IdConcours_voter = concours.Id_concours')
-            ->join('zone', 'zone.SupportZone_zone = concours.concours_SupportZone')
-            ->join('user', 'user.login_User = voter.LoginUser_voter')
-            ->where('SupportZone_zone', $nomSupport AND 'login_User',$login AND 'voter_aVoter', 1);
+            ->where($array);
         $query = $builder->get();
         if($query->getFieldCount()>0){
             return $query->getResult();
@@ -20,10 +20,11 @@ class m_vote extends \CodeIgniter\Model
             return false;
         }
     }
+    ///Requête qui renvoie les jeux pour lesquels on peut voter
     public function recupJeuVote($id1, $id2, $id3)
     {
         $db=db_connect();
-        $builder =  $db->table('jeux')->select('jeux_Nom')
+        $builder =  $db->table('jeux')->select('*')
         ->where('Id_jeux',$id1)
         ->orWhere( 'Id_jeux',$id2)
         ->orWhere( 'Id_jeux', $id3);
@@ -31,6 +32,20 @@ class m_vote extends \CodeIgniter\Model
         if($query->getFieldCount()>0){
             return $query->getResult();
         }else {
+            return false;
+        }
+    }
+    ///Requête qui ajoute un vote
+    public function ajoutVote ($info)
+    {
+        $db=db_connect();
+        $builder=$db->table('voter');
+        $query = $builder->insert($info);
+        if ($query)
+        {
+            return true;
+        }
+        else {
             return false;
         }
     }
