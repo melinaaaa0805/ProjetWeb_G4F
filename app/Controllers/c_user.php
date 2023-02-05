@@ -99,7 +99,7 @@ class c_user extends BaseController
                 .view('v_modifInfo', $info)
                 .view ('v_footer');
         }}}
-    
+
     ///Gestion de la page mes informations
     public function info()
     {

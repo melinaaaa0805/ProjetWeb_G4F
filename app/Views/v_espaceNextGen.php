@@ -10,8 +10,7 @@
                 <h1><?php echo $titre ?><span>.</span></h1>
             </div>
             <div class = "container">
-                <h3>Vous pouvez dès à présent découvrir les jeux qui ont déjà été sélectionnés pour le festival !
-                    Vous pouvez également connaitre les règles du tournoi qui lui est associé </h3>
+                <h3>Vous pouvez dès à présent découvrir les jeux qui ont déjà été sélectionnés pour le festival sur Playstation !</h3>
                 <div class = "card-deck">
                     <div class = "card">
                         <?php
@@ -102,8 +101,7 @@
 </section>
 
 <div class = "container">
-    <h3>Vous pouvez dès à présent découvrir les jeux qui ont déjà été sélectionnés pour le festival !
-        Vous pouvez également connaitre les règles du tournoi qui lui est associé </h3>
+    <h3>Vous pouvez dès à présent découvrir les jeux qui ont déjà été sélectionnés pour le festival sur Xbox ! </h3>
     <div class = "card-deck">
         <div class = "card">
             <?php
