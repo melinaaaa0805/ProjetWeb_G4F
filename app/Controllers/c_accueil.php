@@ -33,11 +33,33 @@ class c_accueil extends BaseController
         $lesLots=new m_place();
         $support="Switch";
         $data['jeux']=$lesJeux->getLesJeuxSupport($support);
+        $data['jeuxVote']=$lesJeux->getLesJeuxVote($support);
         $data['lots']=$lesLots->getLesLots($support);
         $data['titre'] = "Espace Nintendo";
         return
             view('v_menu')
             .view('v_espaceNintendo',$data)
+            . view('v_footer');
+    }
+    ///retourne la page espace nextgen avec tous les jeux correspondants
+    public function espaceNextGen()
+    {
+        $lesJeux=new m_jeux();
+        $lesLots=new m_place();
+        $support="Xbox";
+        $data['jeuxXbox']=$lesJeux->getLesJeuxSupport($support);
+        $data['jeuxXboxVote']=$lesJeux->getLesJeuxVote($support);
+        $data['lotsXbox']=$lesLots->getLesLots($support);
+        $lesJeux=new m_jeux();
+        $lesLots=new m_place();
+        $support="Playstation";
+        $data['jeuxPlaystation']=$lesJeux->getLesJeuxSupport($support);
+        $data['jeuxPlaystationVote']=$lesJeux->getLesJeuxVote($support);
+        $data['lotsPlaystation']=$lesLots->getLesLots($support);
+        $data['titre'] = "Espace NextGen";
+        return
+            view('v_menu')
+            .view('v_espaceNextGen',$data)
             . view('v_footer');
     }
 /// retourne la page login

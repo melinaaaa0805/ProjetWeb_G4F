@@ -71,7 +71,7 @@
                     <ul>
                         <li><a><?=anchor(base_url().'/public/', 'Présentation')?></a></li>
                         <li><a><?=anchor(base_url().'/public/espaceNintendo/', 'Espace Nintendo')?></a></li>
-                        <li><a><?=anchor(base_url().'/public/', 'Espace Next GEN')?></a></li>
+                        <li><a><?=anchor(base_url().'/public/espaceNextGen', 'Espace Next GEN')?></a></li>
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto"><?=anchor(base_url().'/public/', 'Nous contacter',['class' => 'nav-link scrollto'])?></a></li>
