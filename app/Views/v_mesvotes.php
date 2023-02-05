@@ -23,7 +23,7 @@ if ($concoursSwitch==null){?>
         <?= anchor(base_url().'/public/mesvotes/switch', "Voter", ['class' => 'get-started-btn scrollto']) ?>
    <?php }
     else {?>
-<h4>Vous avez déjà voter pour <?php echo $concoursSwitch[0]->concours_Nom; ?>.
+<h4>Vous avez déjà voté pour <?php echo $concoursSwitch[0]->concours_Nom; ?>.
     Revenez l'année prochaine pour voter pour votre tournoi préféré !</h4>
     <?php }?>
 
@@ -34,7 +34,7 @@ if ($concoursPlaystation==null){?>
     <?= anchor(base_url().'/public/mesvotes/playstation', "Voter", ['class' => 'get-started-btn scrollto']) ?>
 <?php }
 else {?>
-    <h4>Vous avez déjà voter pour <?php echo $concoursPlaystation[0]->concours_Nom; ?>.
+    <h4>Vous avez déjà voté pour <?php echo $concoursPlaystation[0]->concours_Nom; ?>.
         Revenez l'année prochaine pour voter pour votre tournoi préféré !</h4>
 <?php }?>
 
@@ -45,7 +45,7 @@ else {?>
                 <?= anchor(base_url().'/public/mesvotes/xbox', "Voter", ['class' => 'get-started-btn scrollto']) ?>
             <?php }
             else {?>
-                <h4>Vous avez déjà voter pour <?php echo $concoursXbox[0]->concours_Nom; ?>.
+                <h4>Vous avez déjà voté pour <?php echo $concoursXbox[0]->concours_Nom; ?>.
                     Revenez l'année prochaine pour voter pour votre tournoi préféré !</h4>
             <?php }?>
         </div>
