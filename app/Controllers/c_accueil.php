@@ -38,14 +38,12 @@ class c_accueil extends BaseController
         $data['titre'] = "Espace Nintendo";
         Services::session();
         if (session()->get('login')==null){
-            $data['titre'] = "Accueil";
             return
                 view('v_menu')
                 .view('v_espaceNintendo',$data)
                 . view('v_footer');
         }
         else {
-            $data['titre'] = "Accueil";
             return
                 view('v_menuConnecte')
                 .view('v_espaceNintendo',$data)
@@ -68,14 +66,12 @@ class c_accueil extends BaseController
         $data['lotsPlaystation']=$lesLots->getLesLots($support);
         $data['titre'] = "Espace NextGen";
         if (session()->get('login')==null){
-            $data['titre'] = "Accueil";
             return
                 view('v_menu')
                 .view('v_espaceNextGen',$data)
                 . view('v_footer');
         }
         else {
-            $data['titre'] = "Accueil";
             return
                 view('v_menuConnecte')
                 .view('v_espaceNextGen',$data)
