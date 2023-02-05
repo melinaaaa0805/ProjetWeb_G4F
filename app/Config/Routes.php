@@ -75,7 +75,11 @@ $routes->get('espaceNextGen/NBA2K23', 'c_jeux::nba');
 $routes->get('espaceNextGen/Overwatch', 'c_jeux::overwatch');
 $routes->get('espaceNextGen/HaloInfinite', 'c_jeux::haloInfinite');
 
-
+/*
+ * --------------------------------------------------------------------
+ * Connexion / inscription
+ * --------------------------------------------------------------------
+ */
 $routes->match(['get', 'post'], 'login/', 'c_connexion::index');
 $routes->match(['get', 'post'], 'espace/', 'c_user::info');
 $routes->match(['get', 'post'], 'inscription/', 'c_connexion::ajoutUser');
@@ -83,14 +87,34 @@ $routes->match(['get', 'post'], 'connexion/', 'c_connexion::index');
 $routes->get('/deconnexion', 'c_connexion::deconnexion');
 $routes->match(['get', 'post'], 'ajoutUtilisateur/', 'c_connexion::ajoutUser');
 $routes->match(['get', 'post'], '/', 'c_accueil::index');
+
+/*
+ * --------------------------------------------------------------------
+ * Voir / modifier les informations
+ * --------------------------------------------------------------------
+ */
 $routes->match(['get', 'post'], 'modification/', 'c_user::modifInfo');
 $routes->match(['get', 'post'], 'modificationInfo/', 'c_user::modificationInfo');
 $routes->match(['get', 'post'], 'suppression/', 'c_user::suppression');
+
+/*
+ * --------------------------------------------------------------------
+ * Voter
+ * --------------------------------------------------------------------
+ */
 $routes->match(['get', 'post'], 'monvote/', 'c_vote::votePage');
 $routes->match(['get', 'post'], 'mesvotes/playstation', 'c_vote::mesvotesPlaystation');
 $routes->match(['get', 'post'], 'mesvotes/switch', 'c_vote::mesvotesSwitch');
 $routes->match(['get', 'post'], 'mesvotes/xbox', 'c_vote::mesvotesXbox');
 $routes->match(['get', 'post'], 'monvote/voter', 'c_vote::ajoutVote');
+
+/*
+ * --------------------------------------------------------------------
+ * Inscription aux tournois
+ * --------------------------------------------------------------------
+ */
+$routes->match(['get', 'post'], 'inscription/', 'c_inscriptionTournois::index');
+
 
 
 

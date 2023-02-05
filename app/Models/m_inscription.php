@@ -5,10 +5,23 @@ use CodeIgniter\Model;
 
 class m_inscription extends \CodeIgniter\Model
 {
+    public function recupConcoursTournoi($support){
+        $db=db_connect();
+        $builder=$db->table('concours')->select('*')
+            ->where(['concours_SupportZone '=>$support])
+            ->where(['concours_Actif  '=>1]);
+        $query = $builder->get();
+        if($query->getFieldCount()>0){
+            return $query->getResult();
+        }else {
+            return false;
+        }
+    }
     public function recupDateConcours($id){
         $db=db_connect();
-        $builder=$db->table('avoirlieu');
-        $query = $builder->getWhere(['IdConcours_avoirLieu'=>$id]);
+        $builder=$db->table('avoirlieu')->select('*')
+            ->where(['avoirlieu.IdConcours '=>$id]);
+        $query = $builder->get();
         if($query->getFieldCount()>0){
             return $query->getResult();
         }else {
