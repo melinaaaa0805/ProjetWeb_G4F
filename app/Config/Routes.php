@@ -77,20 +77,20 @@ $routes->get('espaceNextGen/HaloInfinite', 'c_jeux::haloInfinite');
 
 
 $routes->match(['get', 'post'], 'login/', 'c_connexion::index');
-$routes->match(['get', 'post'], 'espace/', 'c_connexion::info');
+$routes->match(['get', 'post'], 'espace/', 'c_user::info');
 $routes->match(['get', 'post'], 'inscription/', 'c_connexion::ajoutUser');
 $routes->match(['get', 'post'], 'connexion/', 'c_connexion::index');
 $routes->get('/deconnexion', 'c_connexion::deconnexion');
 $routes->match(['get', 'post'], 'ajoutUtilisateur/', 'c_connexion::ajoutUser');
 $routes->match(['get', 'post'], '/', 'c_accueil::index');
-$routes->match(['get', 'post'], 'modification/', 'c_connexion::modifInfo');
+$routes->match(['get', 'post'], 'modification/', 'c_user::modifInfo');
 $routes->match(['get', 'post'], 'modificationInfo/', 'c_user::modificationInfo');
 $routes->match(['get', 'post'], 'suppression/', 'c_user::suppression');
-$routes->match(['get', 'post'], 'monvote/', 'c_user::votePage');
-$routes->match(['get', 'post'], 'mesvotes/playstation', 'c_user::mesvotesPlaystation');
-$routes->match(['get', 'post'], 'mesvotes/switch', 'c_user::mesvotesSwitch');
-$routes->match(['get', 'post'], 'mesvotes/xbox', 'c_user::mesvotesXbox');
-$routes->match(['get', 'post'], 'monvote/voter', 'c_user::ajoutVote');
+$routes->match(['get', 'post'], 'monvote/', 'c_vote::votePage');
+$routes->match(['get', 'post'], 'mesvotes/playstation', 'c_vote::mesvotesPlaystation');
+$routes->match(['get', 'post'], 'mesvotes/switch', 'c_vote::mesvotesSwitch');
+$routes->match(['get', 'post'], 'mesvotes/xbox', 'c_vote::mesvotesXbox');
+$routes->match(['get', 'post'], 'monvote/voter', 'c_vote::ajoutVote');
 
 
 

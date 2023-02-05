@@ -36,11 +36,18 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nintendo';
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
     ///renvoie la page v_jeux avec les informations de SwitchSport
     public function switchSports()
     {
@@ -50,11 +57,18 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nintendo';
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
     ///renvoie la page v_jeux avec les informations de StreetFighter
     public function streetFighter()
     {
@@ -64,11 +78,19 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nintendo';
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
+
     ///renvoie la page v_jeux avec les informations de JustDance
     public function justDance()
     {
@@ -78,11 +100,19 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nintendo';
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
+
     ///renvoie la page v_jeux avec les informations de Call of Duty
     public function callOf()
     {
@@ -92,11 +122,19 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
+
     ///renvoie la page v_jeux avec les informations de Fifa
     public function fifa()
     {
@@ -107,11 +145,19 @@ class c_jeux extends BaseController
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
 
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
+
 ///renvoie la page v_jeux avec les informations de Rocket League
     public function rocketLeague()
     {
@@ -122,11 +168,18 @@ class c_jeux extends BaseController
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
 
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
 ///renvoie la page v_jeux avec les informations de LeagueOfLegend
     public function leagueOflegend()
     {
@@ -136,12 +189,18 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
-
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
     ///renvoie la page v_jeux avec les informations de NBA
     public function nba()
     {
@@ -151,12 +210,18 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
-
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
     ///renvoie la page v_jeux avec les informations de overwatch
     public function overwatch()
     {
@@ -166,12 +231,18 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
-
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
     ///renvoie la page v_jeux avec les informations de Gran Turismo
     public function granTurismo()
     {
@@ -181,12 +252,18 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
-
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
     ///renvoie la page v_jeux avec les informations de Arkanoid
     public function arkanoid()
     {
@@ -196,12 +273,18 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
-
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
     ///renvoie la page v_jeux avec les informations de F122
     public function f122()
     {
@@ -211,12 +294,18 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
-
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
     public function haloInfinite()
     {
         $UnJeu=new m_jeux();
@@ -225,10 +314,16 @@ class c_jeux extends BaseController
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
         $data['route']='nextGen';
-
-        return
-            view('v_menu')
-            .view('v_jeux',$data)
-            . view('v_footer');
-    }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_accueil',$data)
+                . view('v_footer');
+        }
+        else {
+            return
+                view('v_menuConnecte')
+                .view('v_jeux',$data)
+                . view('v_footer');
+        }}
 }
