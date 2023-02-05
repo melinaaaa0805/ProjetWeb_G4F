@@ -20,7 +20,7 @@
                             'class' => 'card-img-top'];
                         echo img($propieteImage);?>
                         <div class = "card-footer">
-                            <a><?=anchor(base_url().'/public/espaceNextGen/SuperSmach', 'Découvrir '.$jeuxPlaystation[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
+                            <a><?=anchor(base_url().'/public/espaceNextGen/LeagueOfLegend', 'Découvrir '.$jeuxPlaystation[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
                         </div>
                     </div>
                     <div class = "card">
@@ -30,7 +30,7 @@
                             'class' => 'card-img-top'];
                         echo img($propieteImage);?>
                         <div class = "card-footer">
-                            <a><?=anchor(base_url().'/public/espaceNextGen/JustDance', 'Découvrir '.$jeuxPlaystation[1]->jeux_Nom,['class' => 'btn-btn'])?></a>
+                            <a><?=anchor(base_url().'/public/espaceNextGen/CallOfDuty', 'Découvrir '.$jeuxPlaystation[1]->jeux_Nom,['class' => 'btn-btn'])?></a>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                             'class' => 'card-img-top'];
                         echo img($propieteImage);?>
                         <div class = "card-footer">
-                            <a><?=anchor(base_url().'/public/espaceNextGen/MarioStrikersBattleLeague', 'Découvrir '.$jeuxPlaystationVote[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
+                            <a><?=anchor(base_url().'/public/espaceNextGen/GranTurismo7', 'Découvrir '.$jeuxPlaystationVote[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
                         </div>
                     </div>
                     <div class = "card">
@@ -55,7 +55,7 @@
                             'class' => 'card-img-top'];
                         echo img($propieteImage);?>
                         <div class = "card-footer">
-                            <a><?=anchor(base_url().'/public/espaceNextGen/NintendoSwitchSports', 'Découvrir '.$jeuxPlaystationVote[1]->jeux_Nom,['class' => 'btn-btn'])?></a>
+                            <a><?=anchor(base_url().'/public/espaceNextGen/F122', 'Découvrir '.$jeuxPlaystationVote[1]->jeux_Nom,['class' => 'btn-btn'])?></a>
                         </div>
                     </div>
                     <div class = "card">
@@ -65,7 +65,7 @@
                             'class' => 'card-img-top'];
                         echo img($propieteImage);?>
                         <div class = "card-footer">
-                            <a><?=anchor(base_url().'/public/espaceNextGen/StreetFighter', 'Découvrir '.$jeuxPlaystationVote[2]->jeux_Nom,['class' => 'btn-btn'])?></a>
+                            <a><?=anchor(base_url().'/public/espaceNextGen/Arkanoid', 'Découvrir '.$jeuxPlaystationVote[2]->jeux_Nom,['class' => 'btn-btn'])?></a>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                 'class' => 'card-img-top'];
             echo img($propieteImage);?>
             <div class = "card-footer">
-                <a><?=anchor(base_url().'/public/espaceNextGen/SuperSmach', 'Découvrir '.$jeuxXbox[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
+                <a><?=anchor(base_url().'/public/espaceNextGen/RocketLeague', 'Découvrir '.$jeuxXbox[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
             </div>
         </div>
         <div class = "card">
@@ -122,7 +122,7 @@
                 'class' => 'card-img-top'];
             echo img($propieteImage);?>
             <div class = "card-footer">
-                <a><?=anchor(base_url().'/public/espaceNextGen/JustDance', 'Découvrir '.$jeuxXbox[1]->jeux_Nom,['class' => 'btn-btn'])?>?></a>
+                <a><?=anchor(base_url().'/public/espaceNextGen/Fifa22', 'Découvrir '.$jeuxXbox[1]->jeux_Nom,['class' => 'btn-btn'])?>?></a>
             </div>
         </div>
     </div>
@@ -137,7 +137,7 @@
                 'class' => 'card-img-top'];
             echo img($propieteImage);?>
             <div class = "card-footer">
-                <a><?=anchor(base_url().'/public/espaceNextGen/MarioStrikersBattleLeague', 'Découvrir '.$jeuxXboxVote[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
+                <a><?=anchor(base_url().'/public/espaceNextGen/NBA2K23', 'Découvrir '.$jeuxXboxVote[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
             </div>
         </div>
         <div class = "card">
@@ -147,7 +147,7 @@
                 'class' => 'card-img-top'];
             echo img($propieteImage);?>
             <div class = "card-footer">
-                <a><?=anchor(base_url().'/public/espaceNextGen/NintendoSwitchSports', 'Découvrir '.$jeuxXboxVote[1]->jeux_Nom,['class' => 'btn-btn'])?>?></a>
+                <a><?=anchor(base_url().'/public/espaceNextGen/Overwatch', 'Découvrir '.$jeuxXboxVote[1]->jeux_Nom,['class' => 'btn-btn'])?>?></a>
             </div>
         </div>
         <div class = "card">
@@ -157,7 +157,7 @@
                 'class' => 'card-img-top'];
             echo img($propieteImage);?>
             <div class = "card-footer">
-                <a><?=anchor(base_url().'/public/espaceNextGen/StreetFighter', 'Découvrir '.$jeuxXboxVote[2]->jeux_Nom,['class' => 'btn-btn'])?>?></a>
+                <a><?=anchor(base_url().'/public/espaceNextGen/HaloInfinite', 'Découvrir '.$jeuxXboxVote[2]->jeux_Nom,['class' => 'btn-btn'])?>?></a>
             </div>
         </div>
     </div>

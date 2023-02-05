@@ -52,17 +52,28 @@ $routes->get('espaceNintendo/StreetFighter', 'c_jeux::streetFighter');
 /*
  * --------------------------------------------------------------------
  * Espace NextGen
+ * Playstation
  * --------------------------------------------------------------------
  */
 
 $routes->get('espaceNextGen/', 'c_accueil::espaceNextGen');
-$routes->get('espaceNintendo/SuperSmach', 'c_jeux::superSmach');
-$routes->get('espaceNintendo/MarioStrikersBattleLeague', 'c_jeux::mario');
-$routes->get('espaceNintendo/NintendoSwitchSports', 'c_jeux::switchSports');
-$routes->get('espaceNintendo/JustDance', 'c_jeux::justDance');
-$routes->get('espaceNintendo/StreetFighter', 'c_jeux::streetFighter');
+$routes->get('espaceNextGen/CallOfDuty', 'c_jeux::callOf');
+$routes->get('espaceNextGen/LeagueOfLegend', 'c_jeux::leagueOflegend');
+$routes->get('espaceNextGen/GranTurismo7', 'c_jeux::granTurismo');
+$routes->get('espaceNextGen/F122', 'c_jeux::f122');
+$routes->get('espaceNextGen/Arkanoid', 'c_jeux::arkanoid');
 
-
+/*
+ * --------------------------------------------------------------------
+ * Espace NextGen
+ * Xbox
+ * --------------------------------------------------------------------
+ */
+$routes->get('espaceNextGen/RocketLeague', 'c_jeux::rocketLeague');
+$routes->get('espaceNextGen/Fifa22', 'c_jeux::fifa');
+$routes->get('espaceNextGen/NBA2K23', 'c_jeux::nba');
+$routes->get('espaceNextGen/Overwatch', 'c_jeux::overwatch');
+$routes->get('espaceNextGen/HaloInfinite', 'c_jeux::haloInfinite');
 
 
 $routes->match(['get', 'post'], 'login/', 'c_connexion::index');

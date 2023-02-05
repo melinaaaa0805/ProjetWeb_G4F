@@ -33,7 +33,7 @@
             <div class="item active">
                 <!-- Utilisation de l'ID pour trouver les images / règle de nommage dossier=id et chaque image commence par l'id -->
                 <?php
-                $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation1.jpg',
+                $propieteImage = ['src' => '/public/assets/img/'.$route.'/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation1.jpg',
                     'alt'=>$jeux[0]->jeux_Nom,
                     'class'=>'item active', 'style'=>'width:100%;'];
                 echo img($propieteImage);
@@ -42,7 +42,7 @@
 
             <div class="item">
                 <?php
-                $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation2.jpg',
+                $propieteImage = ['src' => '/public/assets/img/'.$route.'/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation2.jpg',
                     'alt'=>$jeux[0]->jeux_Nom,
                     'class'=>'item', 'style'=>'width:100%;'];
                 echo img($propieteImage);
@@ -51,7 +51,7 @@
 
             <div class="item">
                 <?php
-                $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation3.jpg',
+                $propieteImage = ['src' => '/public/assets/img/'.$route.'/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation3.jpg',
                     'alt'=>$jeux[0]->jeux_Nom,
                     'class'=>'item', 'style'=>'width:100%;'];
                 echo img($propieteImage);
@@ -77,7 +77,7 @@
             <div class="row no-gutters">
                 <div class="col-lg-6 video-box">
                     <?php
-                    $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation4.jpg',
+                    $propieteImage = ['src' => '/public/assets/img/'.$route.'/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation4.jpg',
                         'alt'=>$jeux[0]->jeux_Nom,
                         'class'=>'img','style'=>'width:100%; height:100%;'];
                     echo img($propieteImage);

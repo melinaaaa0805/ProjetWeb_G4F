@@ -14,6 +14,7 @@ class c_jeux extends BaseController
         $id=10;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nintendo';
         if (session()->get('login')==null){
             return
                 view('v_menu')
@@ -34,6 +35,7 @@ class c_jeux extends BaseController
         $id=4;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nintendo';
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -47,6 +49,7 @@ class c_jeux extends BaseController
         $id=5;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nintendo';
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -60,6 +63,7 @@ class c_jeux extends BaseController
         $id=6;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nintendo';
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -73,6 +77,7 @@ class c_jeux extends BaseController
         $id=11;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nintendo';
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -86,6 +91,7 @@ class c_jeux extends BaseController
         $id=12;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -99,6 +105,8 @@ class c_jeux extends BaseController
         $id=14;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -112,6 +120,8 @@ class c_jeux extends BaseController
         $id=13;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -125,6 +135,8 @@ class c_jeux extends BaseController
         $id=15;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -138,6 +150,8 @@ class c_jeux extends BaseController
         $id=1;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -151,6 +165,8 @@ class c_jeux extends BaseController
         $id=2;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -164,6 +180,8 @@ class c_jeux extends BaseController
         $id=7;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
         return
             view('v_menu')
             .view('v_jeux',$data)
@@ -177,6 +195,37 @@ class c_jeux extends BaseController
         $id=9;
         $data['jeux']=$UnJeu->getUnJeu($id);
         $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
+        return
+            view('v_menu')
+            .view('v_jeux',$data)
+            . view('v_footer');
+    }
+    ///renvoie la page v_jeux avec les informations de F122
+    public function f122()
+    {
+        $UnJeu=new m_jeux();
+        $UnConcours=new m_concours();
+        $id=8;
+        $data['jeux']=$UnJeu->getUnJeu($id);
+        $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
+        return
+            view('v_menu')
+            .view('v_jeux',$data)
+            . view('v_footer');
+    }
+    public function haloInfinite()
+    {
+        $UnJeu=new m_jeux();
+        $UnConcours=new m_concours();
+        $id=3;
+        $data['jeux']=$UnJeu->getUnJeu($id);
+        $data['concours']=$UnConcours->getUnConcours($id);
+        $data['route']='nextGen';
+
         return
             view('v_menu')
             .view('v_jeux',$data)
