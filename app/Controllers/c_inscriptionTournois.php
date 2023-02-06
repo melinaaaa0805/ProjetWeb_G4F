@@ -9,40 +9,43 @@ class c_inscriptionTournois extends BaseController
     public function index (){
         $model=new m_inscription();
         $result=$model->recupConcoursTournoi('Switch');
-        if ($result<>!false){
+        if (isset($result[0])){
             $data['concoursSwitch']=$result;
-            $result2=$model->recupDateConcours($result[0]->Id_concours);
-            if ($result2<>!false){
-                $data['dateSwitch1']=$result;
+            $id=(int)($result[0]->Id_concours);
+            $result2=$model->recupDateConcours($id);
+            if (isset($result2[0])){
+                $data['dateSwitch1']=$result2;
                 $result3=$model->recupDateConcours($result[1]->Id_concours);
-                if ($result3<>!false){
-                    $data['dateSwitch2']=$result;
+                if (isset($result3[0])){
+                    $data['dateSwitch2']=$result3;
                 }
             }
         }
         $model=new m_inscription();
         $result=$model->recupConcoursTournoi('Playstation');
-        if ($result<>!false){
+        if (isset($result[0])){
             $data['concoursPlaystation']=$result;
-            $result2=$model->recupDateConcours($result[0]->Id_concours);
-            if ($result2<>!false){
-                $data['datePlaystation1']=$result;
+            $id=(int)($result[0]->Id_concours);
+            $result2=$model->recupDateConcours($id);
+            if (isset($result2[0])){
+                $data['datePlaystation1']=$result2;
                 $result3=$model->recupDateConcours($result[1]->Id_concours);
-                if ($result3<>!false){
-                    $data['datePlaystation2']=$result;
+                if (isset($result3[0])){
+                    $data['datePlaystation2']=$result3;
                 }
             }
         }
         $model=new m_inscription();
         $result=$model->recupConcoursTournoi('Xbox');
-        if ($result<>!false){
+        if (isset($result[0])){
             $data['concoursXbox']=$result;
-            $result2=$model->recupDateConcours($result[0]->Id_concours);
-            if ($result2<>!false){
-                $data['dateXbox1']=$result;
+            $id=(int)($result[0]->Id_concours);
+            $result2=$model->recupDateConcours($id);
+            if (isset($result2[0])){
+                $data['dateXbox1']=$result2;
                 $result3=$model->recupDateConcours($result[1]->Id_concours);
-                if ($result3<>!false){
-                    $data['dateXbox2']=$result;
+                if (isset($result3[0])){
+                    $data['dateXbox2']=$result3;
                 }
             }
         }

@@ -113,7 +113,7 @@ $routes->match(['get', 'post'], 'monvote/voter', 'c_vote::ajoutVote');
  * Inscription aux tournois
  * --------------------------------------------------------------------
  */
-$routes->match(['get', 'post'], 'inscription/', 'c_inscriptionTournois::index');
+$routes->match(['get', 'post'], '/monespace/inscription/', 'c_inscriptionTournois::index');
 
 
 

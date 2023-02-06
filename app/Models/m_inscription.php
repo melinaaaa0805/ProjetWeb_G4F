@@ -8,8 +8,8 @@ class m_inscription extends \CodeIgniter\Model
     public function recupConcoursTournoi($support){
         $db=db_connect();
         $builder=$db->table('concours')->select('*')
-            ->where(['concours_SupportZone '=>$support])
-            ->where(['concours_Actif  '=>1]);
+            ->where(['concours_SupportZone'=>$support])
+            ->where(['concours_Actif'=>1]);
         $query = $builder->get();
         if($query->getFieldCount()>0){
             return $query->getResult();
@@ -19,9 +19,8 @@ class m_inscription extends \CodeIgniter\Model
     }
     public function recupDateConcours($id){
         $db=db_connect();
-        $builder=$db->table('avoirlieu')->select('*')
-            ->where(['avoirlieu.IdConcours '=>$id]);
-        $query = $builder->get();
+        $builder=$db->table('avoirlieu');
+        $query = $builder->getWhere(['IdConcours_avoirLieu'=>$id]);
         if($query->getFieldCount()>0){
             return $query->getResult();
         }else {
@@ -32,6 +31,16 @@ class m_inscription extends \CodeIgniter\Model
         $db=db_connect();
         $builder=$db->table('avoirlieu');
         $query = $builder->getWhere(['IdConcours_inscription'=>$id]);
+        if($query->getFieldCount()>0){
+            return $query->getFieldCount();
+        }else {
+            return false;
+        }
+    }
+    public function recupNbInscrit($id){
+        $db=db_connect();
+        $builder=$db->table('avoirlieu');
+        $query = $builder->getWhere(['avoirlieu_CodeReservation '=>$id]);
         if($query->getFieldCount()>0){
             return $query->getFieldCount();
         }else {
