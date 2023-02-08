@@ -20,12 +20,15 @@
                             Vous êtes inscrit(e) :
                         <?php foreach ($inscription as $uneInscript):
                                 foreach ($uneInscript as $inscrit):
-                                echo "Le ".$inscrit->Date_avoirLieu; ?>
-                        <br>pour
+                                    $dateConv=strtotime($inscrit->Date_avoirLieu);
+                                    $date=date('d/m',$dateConv);
+                                    $heure=date('H:i',$dateConv);
+                                echo "Le ".$date." à ".$heure; ?>
+                        <br>Pour
                        <?php echo $inscrit->concours_Nom;?>
-                        <br>sur
+                        <br>Sur
                                     <?php echo $inscrit->SupportZone_zone;?>
-                        <br>dans l'espace
+                        <br>Sans l'espace
                                     <?php echo $inscrit->zone_NomZone;
                         endforeach;
                        endforeach; }?>
