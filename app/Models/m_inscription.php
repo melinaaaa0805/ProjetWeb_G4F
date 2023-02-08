@@ -27,22 +27,25 @@ class m_inscription extends \CodeIgniter\Model
             return false;
         }
     }
-    public function recupInscription($id){
+    public function recupReserv($id){
         $db=db_connect();
-        $builder=$db->table('avoirlieu');
-        $query = $builder->getWhere(['IdConcours_inscription'=>$id]);
+        $builder=$db->table('avoirlieu')->select('concours_Nom, Date_avoirLieu, SupportZone_zone,zone_NomZone ')
+            ->join('concours', 'IdConcours_avoirLieu = Id_concours')
+            ->join('zone', 'SupportZone_zone = concours_SupportZone')
+            ->where(['avoirlieu_CodeReservation '=>$id]);
+        $query = $builder->get();
         if($query->getFieldCount()>0){
-            return $query->getFieldCount();
+            return $query->getResult();
         }else {
             return false;
         }
     }
-    public function recupNbInscrit($id){
+    public function recupUserInscription($id){
         $db=db_connect();
-        $builder=$db->table('avoirlieu');
-        $query = $builder->getWhere(['avoirlieu_CodeReservation '=>$id]);
+        $builder=$db->table('inscription');
+        $query = $builder->getWhere(['LoginUser_inscription '=>$id]);
         if($query->getFieldCount()>0){
-            return $query->getFieldCount();
+            return $query->getResult();
         }else {
             return false;
         }

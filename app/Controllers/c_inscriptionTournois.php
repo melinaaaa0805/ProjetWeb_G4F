@@ -2,11 +2,13 @@
 
 namespace App\Controllers;
 
+use App\Models\m_concours;
 use App\Models\m_inscription;
 
 class c_inscriptionTournois extends BaseController
 {
     public function index (){
+
         $model=new m_inscription();
         $result=$model->recupConcoursTournoi('Switch');
         if (isset($result[0])){
@@ -49,12 +51,38 @@ class c_inscriptionTournois extends BaseController
                 }
             }
         }
+        if (session()->get('login')==null){
+            return
+                view('v_menu')
+                .view('v_presentationTournois',$data)
+                . view('v_footer');
+        }
+        else{
         return
             view('v_menuConnecte')
-        .view('v_inscriptionTournois',$data)
-        . view('v_footer');
+            .view('v_presentationTournois',$data)
+            . view('v_footer');}
 
 
 
+}
+public function mesInscriptions(){
+        $model=new m_inscription();
+        $result=$model->recupUserInscription(session()->get('login'));
+        If (isset($result[0])) {
+            foreach ($result as $inscrit):
+            $reserv=$inscrit->CodeReservation_inscription;
+            $avoirLieu=$model->recupReserv($reserv);
+            $tab[]=$avoirLieu;
+        endforeach;
+        $data['inscription']=$tab;
+        }
+        else {
+            $data['inscription']=false;
+        }
+        return
+            view('v_menuConnecte')
+            .view('v_mesInscriptions',$data)
+            . view('v_footer');
 }
 }

@@ -37,6 +37,15 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'c_accueil::index');
+
+
+/*
+ * --------------------------------------------------------------------
+ * Espace Présentation
+ * --------------------------------------------------------------------
+ */
+$routes->match(['get', 'post'], '/lestournois/presentation/', 'c_inscriptionTournois::index');
+
 /*
  * --------------------------------------------------------------------
  * Espace Nintendo
@@ -113,7 +122,8 @@ $routes->match(['get', 'post'], 'monvote/voter', 'c_vote::ajoutVote');
  * Inscription aux tournois
  * --------------------------------------------------------------------
  */
-$routes->match(['get', 'post'], '/monespace/inscription/', 'c_inscriptionTournois::index');
+
+$routes->match(['get', 'post'], '/monespace/inscription/', 'c_inscriptionTournois::mesInscriptions');
 
 
 

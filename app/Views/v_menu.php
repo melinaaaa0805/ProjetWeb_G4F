@@ -64,9 +64,9 @@
                 <li><a class="nav-link scrollto">
                         <?=anchor(base_url().'/public/', 'Section Cosplay',['class' => 'nav-link scrollto'])?></a></li>
                 <li class="dropdown"><a><span>
-                        <?=anchor(base_url().'/public/presentation', 'Section tournois',['class' => 'dropdown'])?></span> </a>
+                        <?=anchor(base_url().'/public/lestournois/presentation', 'Section tournois',['class' => 'dropdown'])?></span> </a>
                     <ul>
-                        <li><a><?=anchor(base_url().'/public/', 'Présentation')?></a></li>
+                        <li><a><?=anchor(base_url().'/public/lestournois/presentation', 'Présentation')?></a></li>
                         <li><a><?=anchor(base_url().'/public/espaceNintendo/', 'Espace Nintendo')?></a></li>
                         <li><a><?=anchor(base_url().'/public/espaceNextGen', 'Espace Next GEN')?></a></li>
                     </ul>
