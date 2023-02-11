@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+    <!-- Favicons -->
+    <link href="/public/assets/img/G4F.png" rel="icon">
+    <link href="/public/assets/img/G4F.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,
@@ -76,7 +79,19 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
-        <?= anchor(base_url().'/public/inscription/', "S'inscrire / Se connecter", ['class' => 'get-started-btn scrollto']) ?>
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <li class="dropdown"><a><span>
+        <?= anchor(base_url()."/public/", "Mon espace", ['class' => 'get-started-btn scrollto']) ?>
+                <ul>
+                            <li><a><?=anchor(base_url().'/public/espace', 'Mes informations')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/monvote', 'Mes votes')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/', 'Mes inscriptions')?></a>
+                            <li><a><?=anchor(base_url().'/public/', 'Mes avis')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/deconnexion', 'Déconnexion')?></a></li>
 
+                </ul>
+                    </li>
+            </nav>
     </div>
 </header><!-- End Header -->
+

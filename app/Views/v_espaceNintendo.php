@@ -15,8 +15,8 @@
                     <div class = "card-deck">
                         <div class = "card">
                             <?php
-                            $propieteImage = ['src' => '/public/assets/img/nintendo/10/SuperSmachBrosUltimate.jpg',
-                                'alt' => 'Super Smach Bros Ultimate',
+                            $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeux[0]->Id_jeux.'/'.$jeux[0]->Id_jeux.'_Presentation1.jpg',
+                                'alt' => $jeux[0]->jeux_Nom,
                                 'class' => 'card-img-top'];
                             echo img($propieteImage);?>
                             <div class = "card-footer">
@@ -25,8 +25,8 @@
                         </div>
                         <div class = "card">
                             <?php
-                            $propieteImage = ['src' => '/public/assets/img/nintendo/11/JustDance.jpg',
-                                'alt' => 'Just Dance 2023',
+                            $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeux[1]->Id_jeux.'/'.$jeux[1]->Id_jeux.'_Presentation1.jpg',
+                                'alt' => $jeux[1]->jeux_Nom,
                                 'class' => 'card-img-top'];
                             echo img($propieteImage);?>
                             <div class = "card-footer">
@@ -40,32 +40,32 @@
                     <div class = "card-deck">
                         <div class = "card">
                             <?php
-                            $propieteImage = ['src' => '/public/assets/img/nintendo/4/MarioStrikersBattleLeagueFootball.jpg',
-                                'alt' => 'Mario Strikers : Battle League Football',
+                            $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeuxVote[0]->Id_jeux.'/'.$jeuxVote[0]->Id_jeux.'_Presentation1.jpg',
+                                'alt' => $jeuxVote[0]->jeux_Nom,
                                 'class' => 'card-img-top'];
                             echo img($propieteImage);?>
                             <div class = "card-footer">
-                                <a><?=anchor(base_url().'/public/espaceNintendo/MarioStrikersBattleLeague', 'Découvrir '.$jeux[2]->jeux_Nom,['class' => 'btn-btn'])?></a>
+                                <a><?=anchor(base_url().'/public/espaceNintendo/MarioStrikersBattleLeague', 'Découvrir '.$jeuxVote[0]->jeux_Nom,['class' => 'btn-btn'])?></a>
                             </div>
                         </div>
                         <div class = "card">
                             <?php
-                            $propieteImage = ['src' => '/public/assets/img/nintendo/5/NintendoSwitchSports.png',
-                                'alt' => 'Nintendo Switch Sports',
+                            $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeuxVote[1]->Id_jeux.'/'.$jeuxVote[1]->Id_jeux.'_Presentation1.jpg',
+                                'alt' => $jeuxVote[1]->jeux_Nom,
                                 'class' => 'card-img-top'];
                             echo img($propieteImage);?>
                             <div class = "card-footer">
-                                <a><?=anchor(base_url().'/public/espaceNintendo/NintendoSwitchSports', 'Découvrir '.$jeux[3]->jeux_Nom,['class' => 'btn-btn'])?>?></a>
+                                <a><?=anchor(base_url().'/public/espaceNintendo/NintendoSwitchSports', 'Découvrir '.$jeuxVote[1]->jeux_Nom,['class' => 'btn-btn'])?></a>
                             </div>
                         </div>
                         <div class = "card">
                             <?php
-                            $propieteImage = ['src' => '/public/assets/img/nintendo/6/StreetFighter6.jpg',
-                                'alt' => 'Street Fighter 6',
+                            $propieteImage = ['src' => '/public/assets/img/nintendo/'.$jeuxVote[2]->Id_jeux.'/'.$jeuxVote[2]->Id_jeux.'_Presentation1.jpg',
+                                'alt' => $jeuxVote[2]->jeux_Nom,
                                 'class' => 'card-img-top'];
                             echo img($propieteImage);?>
                             <div class = "card-footer">
-                               <a><?=anchor(base_url().'/public/espaceNintendo/StreetFighter', 'Découvrir '.$jeux[4]->jeux_Nom,['class' => 'btn-btn'])?>?></a>
+                               <a><?=anchor(base_url().'/public/espaceNintendo/StreetFighter', 'Découvrir '.$jeuxVote[2]->jeux_Nom,['class' => 'btn-btn'])?></a>
                             </div>
                         </div>
                     </div>
