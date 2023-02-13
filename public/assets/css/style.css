@@ -1354,3 +1354,12 @@ select {
   margin-top: 40px;
 
 }
+#categorie
+{
+  height:2em;
+}
+
+#categorie select
+{
+  display:none;
+}

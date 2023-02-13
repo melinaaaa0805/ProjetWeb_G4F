@@ -12,31 +12,38 @@
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                     <h3>Mes Inscriptions </h3>
                     <p class="fst">
-                        <?php if (!isset($inscription[0])){?>
-                       Vous n'êtes inscrit à aucun concours !
-                            <a>Cliquez ici si vous voulez vous inscrire</a>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <?php
+                        if (!isset($inscription[0])){?>
+                       Vous n'êtes inscrit à aucun concours
+                                <?=anchor(base_url().'/public/monespace/minscrire/', 'Cliquez ici si vous voulez vous inscrire')?>
                      <?php   }
                         else {?>
-                            Vous êtes inscrit(e) :
+                            Vous êtes inscrit(e) : <br>
                         <?php foreach ($inscription as $uneInscript):
-                                foreach ($uneInscript as $inscrit):
-                                    $dateConv=strtotime($inscrit->Date_avoirLieu);
+                                    $dateConv=strtotime($uneInscript->Date_avoirLieu);
                                     $date=date('d/m',$dateConv);
                                     $heure=date('H:i',$dateConv);
                                 echo "Le ".$date." à ".$heure; ?>
                         <br>Pour
-                       <?php echo $inscrit->concours_Nom;?>
+                                <?php echo $uneInscript->concours_Nom;?>
                         <br>Sur
-                                    <?php echo $inscrit->SupportZone_zone;?>
-                        <br>Sans l'espace
-                                    <?php echo $inscrit->zone_NomZone;
-                        endforeach;
-                       endforeach; }?>
+                                <?php echo $uneInscript->concours_SupportZone ;?>
+                            <br> <br>
+                       <?php endforeach; ?>
+                            <?= anchor(base_url().'/public/monespace/minscrire/', 'Cliquez ici si vous voulez vous inscrire à autre concours'); ?>
+                        <?= anchor(base_url().'/public/monespace/medesinscrire/', 'Cliquez ici si vous voulez vous désinscrire à un concours'); }?>
 
                     </p>
-                    <ul>
-
-                    </ul>
                 </div>
             </div>
 

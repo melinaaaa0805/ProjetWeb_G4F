@@ -124,9 +124,10 @@ $routes->match(['get', 'post'], 'monvote/voter', 'c_vote::ajoutVote');
  */
 
 $routes->match(['get', 'post'], '/monespace/inscription/', 'c_inscriptionTournois::mesInscriptions');
-
-
-
+$routes->match(['get', 'post'], '/monespace/minscrire/', 'c_inscriptionTournois::minscrire');
+$routes->match(['get', 'post'], '/monespace/minscrireTournois/', 'c_inscriptionTournois::minscrireTournois');
+$routes->match(['get', 'post'], '/monespace/medesinscrire/', 'c_inscriptionTournois::medesinscrire');
+$routes->match(['get', 'post'], '/monespace/desinscription/', 'c_inscriptionTournois::desinscription');
 
 
 
