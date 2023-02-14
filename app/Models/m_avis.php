@@ -4,6 +4,7 @@ namespace App\Models;
 
 class m_avis extends \CodeIgniter\Model
 {
+    ///Retourne tous les avis d'un utilisateur
     public function getLesAvis($id){
         $db=db_connect();
         $builder=$db->table('inscription')->select('CodeReservation_inscription, inscription_Avis, inscription_AvisCommentaire, concours_Nom')
@@ -17,6 +18,7 @@ class m_avis extends \CodeIgniter\Model
             return false;
         }
     }
+    /// Ajoute un avis
     public function ajoutAvis($info, $login, $idreserv){
         $db = \Config\Database::connect();
         $builder =  $db->table('inscription')

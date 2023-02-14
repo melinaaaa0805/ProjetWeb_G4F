@@ -7,6 +7,7 @@ use Config\Services;
 
 class c_avis extends BaseController
 {
+    ///Retourne la page accueil avis avec tous les avis de l'utilisateur
     public function mesAvis(){
         $model=new m_avis();
         $result=$model->getLesAvis(session()->get('login'));
@@ -19,6 +20,7 @@ class c_avis extends BaseController
             . view('v_footer');}
 
     }
+    ///Retourne la page ajout avis avec les avis non donnés de l'utilisateur
     public function donnerAvis()
     {
         $model = new m_avis();
@@ -33,6 +35,7 @@ class c_avis extends BaseController
                 . view('v_footer');
         }
     }
+    ///Retourne la page donnerAvis et modifie l'enregistrement dans inscription
     public function ajoutAvis(){
         $model=new m_avis();
             if ($this->request->getPost('commentaire')){

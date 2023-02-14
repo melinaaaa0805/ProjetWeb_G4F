@@ -45,6 +45,7 @@ class c_inscriptionTournois extends BaseController
             .view('v_presentationTournois',$data)
             . view('v_footer');}
     }
+    ///Retourne les inscriptions de l'utilisateur
     public function mesInscriptions(){
         $model=new m_inscription();
         $result=$model->recupUserInscription(session()->get('login'));
@@ -59,6 +60,7 @@ class c_inscriptionTournois extends BaseController
             .view('v_mesInscriptions',$data)
             . view('v_footer');}
 
+/// Retourne tous les concours pour lesquels l'utilisateur peut s'inscrire
     public function minscrire(){
     $model=new m_inscription();
     $age=session()->get('age');
@@ -97,6 +99,7 @@ class c_inscriptionTournois extends BaseController
                     .view('v_minscrire',$data)
                     . view('v_footer');
         }
+        ///Effectue plusieurs contrôle au niveau des dates et ajoute l'inscription
         public function minscrireTournois(){
             $model=new m_inscription();
             /// on récupère les dates de toutes les réservations de l'utilisateur
@@ -136,6 +139,7 @@ class c_inscriptionTournois extends BaseController
                             .view('v_footer');
             }}
             }
+            ///Renvoie une page avec toutes les inscriptions
             public function medesinscrire() {
                 $model=new m_inscription();
                 $result=$model->recupUserInscription(session()->get('login'));
@@ -147,6 +151,7 @@ class c_inscriptionTournois extends BaseController
                         .view('v_footer');
                 }
             }
+            ///Fonction qui permet de se désinscrire
             public function desinscription(){
                 $model= new m_inscription();
                 if  ($this->request->getPost('selection') !== null) {
