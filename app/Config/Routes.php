@@ -128,6 +128,18 @@ $routes->match(['get', 'post'], '/monespace/minscrire/', 'c_inscriptionTournois:
 $routes->match(['get', 'post'], '/monespace/minscrireTournois/', 'c_inscriptionTournois::minscrireTournois');
 $routes->match(['get', 'post'], '/monespace/medesinscrire/', 'c_inscriptionTournois::medesinscrire');
 $routes->match(['get', 'post'], '/monespace/desinscription/', 'c_inscriptionTournois::desinscription');
+/*
+ * --------------------------------------------------------------------
+ * Gestion des avis
+ * --------------------------------------------------------------------
+ */
+
+$routes->match(['get', 'post'], '/monespace/mesAvis/', 'c_avis::mesAvis');
+$routes->match(['get', 'post'], '/monespace/donnermonavis/', 'c_avis::donnerAvis');
+$routes->match(['get', 'post'], '/monespace/donnermonavis/monAvis', 'c_avis::ajoutAvis');
+
+
+
 
 
 

@@ -13,7 +13,7 @@
 
         <label class="form-label" for="email">Email:</label>
         <input class="form-control mb-3" type="email" name="email" id="email"
-               value="<?=set_value('email')?>"required>
+               value="<?=set_value('email')?>" required>
         <?= $validation->getError('email');?><br><br>
 
         <label class="form-label" for="nom">Nom:</label>
@@ -28,7 +28,7 @@
 
         <label class="form-label" for="dateNaissance">Date de naissance:</label>
         <input class="form-control mb-3" type="date" name="dateNaissance" id="dateNaissance"
-               value="<?=set_value('dateNaissance')?>"required>
+               value="<?=set_value('dateNaissance')?>" required>
         <?= $validation->getError('dateNaissance');?><br><br>
 
         <label class="form-label" for="password">Mot de passe:</label>

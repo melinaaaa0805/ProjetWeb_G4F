@@ -86,7 +86,7 @@
                             <li><a><?=anchor(base_url().'/public/espace', 'Mes informations')?></a></li>
                             <li><a><?=anchor(base_url().'/public/monvote', 'Mes votes')?></a></li>
                             <li><a><?=anchor(base_url().'/public/monespace/inscription', 'Mes inscriptions')?></a>
-                            <li><a><?=anchor(base_url().'/public/', 'Mes avis')?></a></li>
+                            <li><a><?=anchor(base_url().'/public/monespace/mesAvis', 'Mes avis')?></a></li>
                             <li><a><?=anchor(base_url().'/public/deconnexion', 'Déconnexion')?></a></li>
 
                 </ul>
