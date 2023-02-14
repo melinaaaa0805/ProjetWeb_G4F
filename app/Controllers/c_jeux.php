@@ -306,6 +306,7 @@ class c_jeux extends BaseController
                 .view('v_jeux',$data)
                 . view('v_footer');
         }}
+    ///renvoie la page v_jeux avec les informations de haloInfinite
     public function haloInfinite()
     {
         $UnJeu=new m_jeux();

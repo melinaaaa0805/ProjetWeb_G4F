@@ -4,6 +4,7 @@ namespace App\Models;
 
 class m_place extends \CodeIgniter\Model
 {
+    ///Récupération des lots individuels ou collectif en fonction d'un support de jeux
     public function getLesLots($nomSupport)
     {
         $db=db_connect();
