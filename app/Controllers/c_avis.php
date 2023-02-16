@@ -8,59 +8,65 @@ use Config\Services;
 class c_avis extends BaseController
 {
     ///Retourne la page accueil avis avec tous les avis de l'utilisateur
-    public function mesAvis(){
-        $model=new m_avis();
-        $result=$model->getLesAvis(session()->get('login'));
-        If (isset($result[0])) {
-            $data['mesAvis']=$result;
-
-        return
-            view('v_menuConnecte')
-            .view('v_accueilAvis',$data)
-            . view('v_footer');}
-
-    }
-    ///Retourne la page ajout avis avec les avis non donnés de l'utilisateur
-    public function donnerAvis()
+    public function mesAvis(): string
     {
         $model = new m_avis();
         $result = $model->getLesAvis(session()->get('login'));
-        $controle = $this->request->getPost('submit');
-        if ($controle == null) {
+        if (isset($result[0])) {
             $data['mesAvis'] = $result;
-            $data['titre'] = "Donner mon avis";
-            return
-                view('v_menuConnecte')
-                . view('v_ajoutAvis', $data)
-                . view('v_footer');
+            $data['titre'] = null;
+        } else {
+            $data['titre'] = "Impossible d'afficher cette page, revenez ultérieurement.";
         }
+            return
+            view('v_menuConnecte')
+            . view('v_accueilAvis', $data)
+            . view('v_footer');
+    }
+    ///Retourne la page ajout avis avec les avis non donnés de l'utilisateur
+    public function donnerAvis(): string
+    {
+        $model = new m_avis();
+        $result = $model->getLesAvis(session()->get('login'));
+        if (isset($result[0])) {
+            $data['mesAvis'] = $result;
+            $data['titre'] = 'Donner mon avis';
+        } else {
+            $data['titre'] = "Impossible d'afficher cette page, revenez ultérieurement.";
+        }
+        return
+            view('v_menuConnecte')
+            . view('v_ajoutAvis', $data)
+            . view('v_footer');
     }
     ///Retourne la page donnerAvis et modifie l'enregistrement dans inscription
-    public function ajoutAvis(){
-        $model=new m_avis();
-            if ($this->request->getPost('commentaire')){
-                $commentaire=NULL;
-            }
-            else {
-                $commentaire=$this->request->getPost('commentaire');
-            }
-            $code=(int)($this->request->getPost('tournoi'));
-            $note=(int)($this->request->getPost('note'));
-            $login= session()->get('login');
+    public function ajoutAvis(): ?string
+    {
+        $model = new m_avis();
+        if ($this->request->getPost('commentaire')) {
+            $commentaire = null;
+        } else {
+            $commentaire = $this->request->getPost('commentaire');
+        }
+            $code = (int)($this->request->getPost('tournoi'));
+            $note = (int)($this->request->getPost('note'));
+            $login = session()->get('login');
             $info = array('LoginUser_inscription' => $login,
                 'CodeReservation_inscription' => $code,
-                'inscription_Avis'=> $note,
+                'inscription_Avis' => $note,
                 'inscription_AvisCommentaire' => $commentaire,
-                'inscription_Place' => NULL);
+                'inscription_Place' => null);
 
-            $result1=$model->ajoutAvis($info,$login,$code);
-            If ($result1){
+            $result1 = $model->ajoutAvis($info, $login, $code);
+            if ($result1) {
                 return
-                $this->donnerAvis();
-        }
-            else {
+                $this->mesAvis();
+            } else {
+                $data['message'] = "Le vote n'a pas été pris en compte, merci de rééssayer ultérieurement.";
                 return
-                    $this->donnerAvis();
+                    view('v_menuConnecte')
+                    . view('v_accueilAvis', $data)
+                    . view('v_footer');
             }
     }
 }

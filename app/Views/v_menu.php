@@ -13,20 +13,20 @@
 
     <!-- Vendor CSS -->
     <?php
-     echo link_tag( 'public/assets/vendor/aos/aos.css');
+     echo link_tag('public/assets/vendor/aos/aos.css');
 //     echo link_tag( 'public/assets/vendor/icofont/icofont.min.css');
 //     echo link_tag( 'public/assets/vendor/animate.css/animate.min.css');
 //     echo link_tag( 'public/assets/vendor/venobox/venobox.css');
-     echo link_tag( 'public/assets/vendor/bootstrap/css/bootstrap.min.css');
-     echo link_tag( 'public/assets/vendor/bootstrap-icons/bootstrap-icons.css');
-     echo link_tag( 'public/assets/vendor/boxicons/css/boxicons.min.css');
-     echo link_tag( 'public/assets/vendor/glightbox/css/glightbox.min.css');
-     echo link_tag( 'public/assets/vendor/remixicon/remixicon.css');
-     echo link_tag( 'public/assets/vendor/swiper/swiper-bundle.min.css');
-     echo link_tag( 'public/assets/css/style.css');
-     echo link_tag( 'public/assets/css/css_jeux.css');
-     echo link_tag( 'public/assets/css/bootstrap.min.css');
-     ?>
+     echo link_tag('public/assets/vendor/bootstrap/css/bootstrap.min.css');
+     echo link_tag('public/assets/vendor/bootstrap-icons/bootstrap-icons.css');
+     echo link_tag('public/assets/vendor/boxicons/css/boxicons.min.css');
+     echo link_tag('public/assets/vendor/glightbox/css/glightbox.min.css');
+     echo link_tag('public/assets/vendor/remixicon/remixicon.css');
+     echo link_tag('public/assets/vendor/swiper/swiper-bundle.min.css');
+     echo link_tag('public/assets/css/style.css');
+     echo link_tag('public/assets/css/css_jeux.css');
+     echo link_tag('public/assets/css/bootstrap.min.css');
+    ?>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"
@@ -37,7 +37,8 @@
 
 <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <title></title>
+    <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
 
     <!-- Template Main CSS -->
 
@@ -50,33 +51,66 @@
     <div class="container d-flex align-items-center justify-content-lg-between">
         <a href="#" class="logo me-auto me-lg-0">
                   <?php
-            $propieteImage = ['src' => '/public/assets/img/G4F.png',
-                'alt'=>"Geek4Fun",
-                'class'=>'img-fluid'];
-            echo img($propieteImage);
-            ?>
+                    $propieteImage = ['src' => '/public/assets/img/G4F.png',
+                    'alt' => 'Geek4Fun',
+                    'class' => 'img-fluid'];
+                    echo img($propieteImage);
+                    ?>
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
                 <li><a>
-                        <?=anchor(base_url().'/public/', 'Accueil',['class' => 'nav-link scrollto active'])?></a></li>
+                        <?=anchor(
+                            base_url() . '/public/',
+                            'Accueil',
+                            ['class' => 'nav-link scrollto active']
+                        )?></a></li>
                 <li><a class="nav-link scrollto">
-                        <?=anchor(base_url().'/public/', 'Section Cybersécurité',['class' => 'nav-link scrollto'])?></a></li>
+                        <?=anchor(
+                            base_url() . '/public/',
+                            'Section Cybersécurité',
+                            ['class' => 'nav-link scrollto']
+                        )?></a></li>
                 <li><a class="nav-link scrollto">
-                        <?=anchor(base_url().'/public/', 'Section Cosplay',['class' => 'nav-link scrollto'])?></a></li>
+                        <?=anchor(
+                            base_url() . '/public/',
+                            'Section Cosplay',
+                            ['class' => 'nav-link scrollto']
+                        )?></a></li>
                 <li class="dropdown"><a><span>
-                        <?=anchor(base_url().'/public/lestournois/presentation', 'Section tournois',['class' => 'dropdown'])?></span> </a>
+                        <?=anchor(
+                            base_url() . '/public/lestournois/presentation',
+                            'Section tournois',
+                            ['class' => 'dropdown']
+                        )?></span> </a>
                     <ul>
-                        <li><a><?=anchor(base_url().'/public/lestournois/presentation', 'Présentation')?></a></li>
-                        <li><a><?=anchor(base_url().'/public/espaceNintendo/', 'Espace Nintendo')?></a></li>
-                        <li><a><?=anchor(base_url().'/public/espaceNextGen', 'Espace Next GEN')?></a></li>
+                        <li><a><?=anchor(
+                            base_url() . '/public/lestournois/presentation',
+                            'Présentation'
+                        )?></a></li>
+                        <li><a><?=anchor(
+                            base_url() . '/public/espaceNintendo/',
+                            'Espace Nintendo'
+                        )?></a></li>
+                        <li><a><?=anchor(
+                            base_url() . '/public/espaceNextGen',
+                            'Espace Next GEN'
+                        )?></a></li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto"><?=anchor(base_url().'/public/', 'Nous contacter',['class' => 'nav-link scrollto'])?></a></li>
+                <li><a class="nav-link scrollto"><?=anchor(
+                    base_url() . '/public/',
+                    'Nous contacter',
+                    ['class' => 'nav-link scrollto']
+                )?></a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
-        <?= anchor(base_url().'/public/inscription/', "S'inscrire / Se connecter", ['class' => 'get-started-btn scrollto']) ?>
+        <?= anchor(
+            base_url() . '/public/inscription/',
+            "S'inscrire / Se connecter",
+            ['class' => 'get-started-btn scrollto']
+        ) ?>
 
     </div>
 </header><!-- End Header -->

@@ -1,7 +1,17 @@
-<section class="mt-5 pb-5">
-    <h1 class="text-center">Mes informations</h1>
+    <section id="presentation" class="d-flex align-items-center justify-content-center">
+        <div class="container" data-aos="fade-up">
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-xl-6 col-lg-8">
+                    <h1>Mes informations<span>.</span></h1>
+                    <?php if (isset($titre)) {?>
+                        <h4><?php
+                            echo $titre; ?>
+                        </h4>
+                    <?php } ?>
+                </div>
+
     <!-- Affichage des informations de l'utilisateur -->
-    <div class="w-50 mx-auto">
+    <div class="col-xl-6 col-lg-8" data-aos="fade-up">
         <label class="form-label" for="pseudo">Pseudo :</label>
         <input class="form-control mb-3" type="text" name="pseudo" id="pseudo"
                disabled value="<?php echo session()->get('login');?>" required>
@@ -25,7 +35,10 @@
         <label class="form-label" for="password">Mot de passe :</label>
         <input class="form-control mb-4" type="password" name="password" id="password"
                disabled value="<?php echo session()->get('password');?>" required>
+
+    <?= anchor(base_url() . '/public/modification/', 'Modifier mes infos', ['class' => 'get-started-btn scrollto']) ?>
+    <?= anchor(base_url() . '/public/suppression/', 'Supprimer mon compte', ['class' => 'get-started-btn scrollto']) ?>
     </div>
-    <?= anchor(base_url().'/public/modification/', "Modifier mes infos", ['class' => 'get-started-btn scrollto']) ?>
-    <?= anchor(base_url().'/public/suppression/', "Supprimer mon compte", ['class' => 'get-started-btn scrollto']) ?>
-</section>
+    </div>
+    </div>
+    </section>

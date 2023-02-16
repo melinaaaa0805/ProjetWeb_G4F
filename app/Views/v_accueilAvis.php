@@ -11,6 +11,9 @@
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                     <h3>Mes Inscriptions </h3>
+                    <h6><?php if (isset($message)) {
+                        echo $message;
+                        } ?></h6>
                     <p class="fst">
                         <br>
                         <br>
@@ -23,23 +26,25 @@
                         <br>
                         <br>
                         <?php
-                        if (!isset($mesAvis[0])){?>
+                        if (!isset($mesAvis[0])) {?>
                             Vous n'étiez inscrit à aucun concours, vous ne pouvez donc pas donner votre avis.
                         <?php   } ?>
-                            <?php foreach ($mesAvis as $unAvis):
-                                if($unAvis->inscription_Avis==null) {?>
+                            <?php foreach ($mesAvis as $unAvis) :
+                                if ($unAvis->inscription_Avis == null) {?>
                                     Vous êtes inscrit à un ou plusieurs concours.
 
-                                <?php echo $unAvis->concours_Nom;?> <br>
-                                    <?= anchor(base_url().'/public/monespace/donnermonavis/', 'Cliquez ici si vous voulez donner votre avis'); ?>
+                                    <?php echo $unAvis->concours_Nom;?> <br>
+                                    <?= anchor(base_url() . '/public/monespace/donnermonavis/', 'Cliquez ici si vous voulez donner votre avis'); ?>
 
-                                <?php } else{ echo $unAvis->concours_Nom;?>
+                                <?php } else {
+                                    echo $unAvis->concours_Nom;?>
                                 <br>
-                                <?php echo $unAvis->inscription_Avis ;?>
+                                    <?php echo $unAvis->inscription_Avis ;?>
                                 <br>
-                                <?php echo $unAvis->inscription_AvisCommentaire ;?>
+                                    <?php echo $unAvis->inscription_AvisCommentaire ;?>
                             <br>
-                            <?php } endforeach; ?>
+                                <?php }
+                            endforeach; ?>
                     </p>
                 </div>
             </div>

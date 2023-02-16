@@ -1,70 +1,59 @@
 <?php
+
 namespace App\Models;
+
 use CodeIgniter\Model;
 
 class m_user extends \CodeIgniter\Model
 {
     // Requête qui vérifie si le login n'est pas déjà utilisé
-    public function verifUser($login)
+    public function verifUser($login): bool | array
     {
-        $db=db_connect();
+        $db = db_connect();
         $builder =  $db->table('user');
-        $query = $builder->getWhere(['login_User'=>$login]);
-        if ($query->getFieldCount()>0)
-        {
+        $query = $builder->getWhere(['login_User' => $login]);
+        if ($query->getFieldCount() > 0) {
             return $query->getResult();
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
     //Requête qui ajoute un utilisateur dans la bdd
-    public function ajoutUser($info)
+    public function ajoutUser($info): bool
     {
-        $db=db_connect();
-        $builder=$db->table('user');
+        $db = db_connect();
+        $builder = $db->table('user');
         $query = $builder->insert($info);
-        if ($query)
-        {
+        if ($query) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
-
     }
     //Requête qui vérifie la connexion de l'utilisateur
-    public function connexion($login, $mdp)
+    public function connexion($login, $mdp): bool | array
     {
         $db = \Config\Database::connect();
         $builder =  $db->table('user');
-        $query = $builder->getWhere(['login_User'=>$login,'user_Mdp'=>$mdp]);
-        if ($query->getFieldCount()>0)
-        {
+        $query = $builder->getWhere(['login_User' => $login,'user_Mdp' => $mdp]);
+        if ($query->getFieldCount() > 0) {
             return $query->getResult();
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
     ///requête qui modifie les informations de l'utilisateur
-    public function modifInfos($info, $login)
+    public function modifInfos($info, $login): bool
     {
 
         $db = \Config\Database::connect();
         $builder =  $db->table('user')
             ->where('login_User', $login);
         $query = $builder->update($info);
-
-        if ($query)
-        {
+        if ($query) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }

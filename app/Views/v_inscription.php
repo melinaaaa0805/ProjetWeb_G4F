@@ -5,7 +5,7 @@
     <h1 class="text-center">Inscription</h1>
         <h4> <?php echo $titre ?></h4>
     <div class="w-50 mx-auto">
-        <?= form_open(base_url()."/public/ajoutUtilisateur"); ?>
+        <?= form_open(base_url() . "/public/ajoutUtilisateur"); ?>
         <label class="form-label" for="login">Login :</label>
         <input class="form-control mb-3" type="text" name="login" id="login"
                value="<?=set_value('login')?>" required>
@@ -13,7 +13,7 @@
 
         <label class="form-label" for="email">Email:</label>
         <input class="form-control mb-3" type="email" name="email" id="email"
-               value="<?=set_value('email')?>" required>
+               value="<?=set_value('email')?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         <?= $validation->getError('email');?><br><br>
 
         <label class="form-label" for="nom">Nom:</label>
@@ -28,23 +28,23 @@
 
         <label class="form-label" for="dateNaissance">Date de naissance:</label>
         <input class="form-control mb-3" type="date" name="dateNaissance" id="dateNaissance"
-               value="<?=set_value('dateNaissance')?>" required>
+               value="<?=set_value('dateNaissance')?>" min="1920-01-01" max="2018-12-31" required>
         <?= $validation->getError('dateNaissance');?><br><br>
 
         <label class="form-label" for="password">Mot de passe:</label>
         <input class="form-control mb-4" type="password" name="password" id="password"
-               value="<?= set_value('password')?>"required>
+               value="<?= set_value('password')?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" required>
         <?= $validation->getError('password');?><br><br>
 
         <label class="form-label" for="password">Répeter le mot de passe : </label>
         <input class="form-control mb-4" type="password" name="password2" id="password2"
-               value="<?=set_value('password2')?>" required>
+               value="<?=set_value('password2')?>" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" required>
         <?= $validation->getError('password2');?><br><br>
 
         <div class="d-flex justify-content-center">
             <input class="btn btn-success mx-auto fs-4 py-1 px-3" type="submit" name ="submit" value="Valider">
         </div>
-        <a><?=anchor(base_url().'/public/connexion/', 'Déjà inscrit(e) ? Cliquez ici pour vous connecter.')?></a>
+        <a><?=anchor(base_url() . '/public/connexion/', 'Déjà inscrit(e) ? Cliquez ici pour vous connecter.')?></a>
 
         <?= form_close(); ?>
     </div>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/public/assets/css/bootstrap.css">
     <script>function Affiche_liste(id_ensemble_select,id_select)
         {
-            // Sélection du bloc contenant les sélections liées (id = "categorie" dans notre exemple)
+            // Sélection du bloc contenant les sélections liées
             var id_ensemble_select2 = document.getElementById(id_ensemble_select);
 
             // Sélection de la sélection liée
@@ -20,7 +20,8 @@
                 //Initialisation d'une variable pour contenir un tableau.
                 var tab = new Array();
 
-                // Cherche les balises select inlues dans le bloc (id = "categorie" dans notre exemple) contenant les sélections liées  et les retourne dans un tableau
+                // Cherche les balises select inlues dans le bloc
+                // contenant les sélections liées  et les retourne dans un tableau
                 tab = id_ensemble_select2.getElementsByTagName('select');
 
                 var tablength = tab.length;
@@ -33,7 +34,7 @@
                     if(id_select2) tab[i].style.display = 'none';// si select est vide on ne fait rien
                 }
 
-                // Met la sélection liée sélectionné en disable = false et l'affiche avec style.display = 'inline'
+                // Met la sélection liée selectionne en disable = false et l'affiche avec style.display = 'inline'
                 if(id_select2)
                 {
                     id_select2.disabled = false;
@@ -41,82 +42,111 @@
                 }
             }
 
-        }</script>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <br>
-    <br><br>
-    <body>
-<?php echo $titre;
-if ((isset($Concours)) And (isset($Switch)))
-{?>
-                <div style="width:40em;margin:auto; border:1px solid black;padding:1em">
+        } </script>
+    <section id="presentation" class="d-flex align-items-center justify-content-center">
+        <div class="container" data-aos="fade-up">
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+                <div class="col-xl-6 col-lg-8">
+                    <h1>M'inscrire <span>.</span></h1>
+                </div>
+                <div class="col-xl-6 col-lg-8" data-aos="fade-up">
+                        <h2><?php
+                        if ($titre == !null) {
+                            echo $titre;
+                            ?></h2>
+                            <?=anchor(
+                                base_url() . '/public/monespace/minscrire/',
+                                'Rééssayer',
+                                ['class' => 'btn-btn']
+                            )?>
+                            <?=anchor(
+                                base_url() . '/public/monespace/inscription/',
+                                'Retourner à mes inscriptions',
+                                ['class' => 'btn-btn']
+                            )?>
+                        <?php } if ((isset($Concours)) and (isset($Switch))) {?>
+                        <h2>Choisissez votre concours : </h2>
                     <form action = "#" method = "post">
-                        <p> <?php foreach ($Concours as $unConcours):{?>
-                            <label for="<?php echo $unConcours->Id_concours; ?>"><?php echo $unConcours->concours_Nom; ?></label>
-                            <input type="radio" id = "<?php echo $unConcours->Id_concours; ?>" name = "cat" value = "<?php echo $unConcours->concours_Nom; ?>" class = "categorie" onclick = "Affiche_liste(this.className,this.value)" />
-                            <?php } endforeach; ?>
+                        <p> <?php foreach ($Concours as $unConcours) :
+                            {?>
+                        <div>
+                            <label for="<?php echo $unConcours->Id_concours; ?>"><?php echo $unConcours->concours_Nom;
+                            ?></label>
+                            <input type="radio" id = "<?php echo $unConcours->Id_concours; ?>" name = "cat"
+                                   value = "<?php echo $unConcours->concours_Nom; ?>" class = "categorie"
+                                   onclick = "Affiche_liste(this.className,this.value)" />
+                            <?php }?> </div>
+                            <?php endforeach; ?>
                         </p>
                 </form>
-                    <?= form_open(base_url(). '/public/monespace/minscrireTournois'); ?>
-                    <!-- CADRE AFFICHAGE DES ENREGISTREMENTS SÉLECTIONNÉES -->
-                    <p style="font-style:italic">La liste déroulante ci-dessous s'affichera en fonction du choix ci-dessus :</p>
+                            <?= form_open(base_url() . '/public/monespace/minscrireTournois'); ?>
+                    <!-- AFFICHAGE DES ENREGISTREMENTS SÉLECTIONNÉES -->
+                    <p style="font-style:italic">Sélectionnez la date et l'heure de votre choix : </p>
                     <p id = "categorie">
-                        <?php foreach ($Concours as $unConcours):
-                        if ($unConcours->concours_SupportZone=="Switch") {
-                            $titre = $unConcours->concours_Nom; ?>
+                            <?php foreach ($Concours as $unConcours) :
+                                if ($unConcours->concours_SupportZone == "Switch") {
+                                    $titre = $unConcours->concours_Nom; ?>
                             <label for="<?php echo $titre ?>"></label>
-                            <select name="selection" id="<?php echo $titre ?>" style="display:inline" disabled="disabled">
-                            <?php foreach ($Switch as $dateS):
-                            if ($dateS->concours_Nom==$unConcours->concours_Nom){
-                            $dateConv = strtotime($dateS->Date_avoirLieu);
-                            $date = date('d/m', $dateConv);
-                            $heure = date('H:i', $dateConv); ?>
+                            <select name="selection" id="<?php echo $titre ?>">
+                                    <?php foreach ($Switch as $dateS) :
+                                        if ($dateS->concours_Nom == $unConcours->concours_Nom) {
+                                            $dateConv = strtotime($dateS->Date_avoirLieu);
+                                            $date = date('d/m', $dateConv);
+                                            $heure = date('H:i', $dateConv); ?>
 
-                                <option value="<?php echo $dateS->avoirlieu_CodeReservation ?>"><?php echo "Le ".$date.' | '.$heure." Il reste ".(int)($dateS->avoirlieu_PlacesRestantes);?> place(s).</option>
-                            <?php } endforeach;}?>
+                                <option value="<?php echo $dateS->avoirlieu_CodeReservation ?>">
+                                            <?php echo 'Le ' . $date . ' | ' . $heure . ' Il reste ' .
+                                            (int)($dateS->avoirlieu_PlacesRestantes);?> place(s).</option>
+                                        <?php }
+                                    endforeach;
+                                }?>
                             </select>
-                        <?php endforeach ;}
-                        if ((isset($Concours)) And (isset($Playstation))){
-                        foreach ($Concours as $unConcours):
-                        if ($unConcours->concours_SupportZone=="Playstation") {
-                            $titre = $unConcours->concours_Nom; ?>
+                            <?php endforeach ;
+                        }
+                        if ((isset($Concours)) and (isset($Playstation))) {
+                            foreach ($Concours as $unConcours) :
+                                if ($unConcours->concours_SupportZone == 'Playstation') {
+                                    $titre = $unConcours->concours_Nom; ?>
                             <select name="selection" id="<?php echo $titre; ?>">
-                            <?php  foreach ($Playstation as $dateP):
-                                if ($dateP->concours_Nom==$unConcours->concours_Nom){
-                                    $dateConv=strtotime($dateP->Date_avoirLieu);
-                                    $date=date('d/m',$dateConv);
-                                    $heure=date('H:i',$dateConv);?>
-                                    <option value="<?php echo $dateP->avoirlieu_CodeReservation ?>"><?php echo "Le ".$date.' | '.$heure." Il reste ".(int)($dateP->avoirlieu_PlacesRestantes);?> place(s).</option>
-                                <?php } endforeach; }?>
+                                        <?php  foreach ($Playstation as $dateP) :
+                                            if ($dateP->concours_Nom == $unConcours->concours_Nom) {
+                                                $dateConv = strtotime($dateP->Date_avoirLieu);
+                                                $date = date('d/m', $dateConv);
+                                                $heure = date('H:i', $dateConv);?>
+                                    <option value="<?php echo $dateP->avoirlieu_CodeReservation ?>">
+                                                <?php echo 'Le ' . $date . ' | ' . $heure . ' Il reste ' .
+                                                    (int)($dateP->avoirlieu_PlacesRestantes);?> place(s).</option>
+                                            <?php }
+                                        endforeach;
+                                }?>
                             </select>
-                        <?php endforeach ;}
-                        if ((isset($Concours)) And (isset($Xbox))){
-                        foreach ($Concours as $unConcours):
-                        if ($unConcours->concours_SupportZone=="Xbox"){
-                        $titre=$unConcours->concours_Nom; ?>
-                            <label for="<?php echo $titre; ?>"></label><select name="selection" id="<?php echo $titre; ?>">
-                            <?php foreach ($Xbox as $dateX):
-                                if ($dateX->concours_Nom==$unConcours->concours_Nom){
-                                    $dateConv=strtotime($dateX->Date_avoirLieu);
-                                    $date=date('d/m',$dateConv);
-                                    $heure=date('H:i',$dateConv); ?>
-                                    <option value="<?php echo $dateX->avoirlieu_CodeReservation ?>"><?php echo "Le ".$date.' | '.$heure." Il reste ".(int)($dateX->avoirlieu_PlacesRestantes);?> place(s).</option>
-                                <?php } endforeach ;} ?>
+                            <?php endforeach ;
+                        }
+                        if ((isset($Concours)) and (isset($Xbox))) {
+                            foreach ($Concours as $unConcours) :
+                                if ($unConcours->concours_SupportZone == "Xbox") {
+                                    $titre = $unConcours->concours_Nom; ?>
+                            <label for="<?php echo $titre; ?>"></label><select name="selection"
+                                id="<?php echo $titre; ?>">
+                                        <?php foreach ($Xbox as $dateX) :
+                                            if ($dateX->concours_Nom == $unConcours->concours_Nom) {
+                                                $dateConv = strtotime($dateX->Date_avoirLieu);
+                                                $date = date('d/m', $dateConv);
+                                                $heure = date('H:i', $dateConv); ?>
+                                    <option value="<?php echo $dateX->avoirlieu_CodeReservation ?>">
+                                                <?php echo "Le " . $date . ' | ' . $heure . " Il reste " .
+                                                    (int)($dateX->avoirlieu_PlacesRestantes);?> place(s).</option>
+                                            <?php }
+                                        endforeach ;
+                                } ?>
                             </select>
-                  <?php endforeach;?>
+                            <?php endforeach;?>
 
                     </p>
-                    <div class="d-flex justify-content-center">
-                        <input class="btn btn-success mx-auto fs-4 py-1 px-3" type="submit" name ="submit" value="M'inscrire">
-                    </div>
-                    <?php }?>
+                        <input class="btn-btn" type="submit" name ="submit" value="M'inscrire">
+                        <?php }?>
                     <?= form_close(); ?>
-    </body>
-</main>
+                </div>
+                    </div>
+                </div>
+    </section>

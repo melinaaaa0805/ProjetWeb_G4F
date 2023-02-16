@@ -112,9 +112,9 @@ $routes->match(['get', 'post'], 'suppression/', 'c_user::suppression');
  * --------------------------------------------------------------------
  */
 $routes->match(['get', 'post'], 'monvote/', 'c_vote::votePage');
-$routes->match(['get', 'post'], 'mesvotes/playstation', 'c_vote::mesvotesPlaystation');
-$routes->match(['get', 'post'], 'mesvotes/switch', 'c_vote::mesvotesSwitch');
-$routes->match(['get', 'post'], 'mesvotes/xbox', 'c_vote::mesvotesXbox');
+$routes->match(['get', 'post'], 'mesvotes/playstation', 'c_vote::tournoisPlaystation');
+$routes->match(['get', 'post'], 'mesvotes/switch', 'c_vote::tournoisSwitch');
+$routes->match(['get', 'post'], 'mesvotes/xbox', 'c_vote::tournoisXbox');
 $routes->match(['get', 'post'], 'monvote/voter', 'c_vote::ajoutVote');
 
 /*
