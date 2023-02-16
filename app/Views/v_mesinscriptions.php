@@ -39,7 +39,7 @@
                                 base_url() . '/public/monespace/minscrire/',
                                 "S'inscrire à autre concours",
                                 ['class' => 'get-started-btn scrollto']
-                            ); ?>
+                            ); ?><br>
                             <?= anchor(
                                 base_url() . '/public/monespace/medesinscrire/',
                                 "Se désinscrire d'un concours",
