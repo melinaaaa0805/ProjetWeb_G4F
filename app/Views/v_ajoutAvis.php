@@ -1,29 +1,22 @@
-<!-- page de connexion -->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<?php if (isset($mesAvis)) { ?>
-<section class="mt-5 pb-5">
-    <h1 class="text-center">Avis</h1>
+<section id="presentation" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+            <div class="col-xl-6 col-lg-8">
+                <h1>Votre avis compte<span>.</span></h1>
+            </div>
+            <div class="col-xl-6 col-lg-8" data-aos="fade-up">
+                <div class="">
+                <?php if (isset($mesAvis)) { ?>
     <h4 class="text-center"> <?php echo $titre ?></h4>
-    <div class="w-50 mx-auto">
-
-        <?= form_open(base_url(). '/public/monespace/donnermonavis/monAvis'); ?>
-
-        <label for="tournoi">Choisir un tournoi</label>
+                    <?= form_open(base_url() . '/public/monespace/donnermonavis/monAvis'); ?>
+        <label for="tournoi">Choisir un tournoi</label><br>
             <select name="tournoi" id="tournoi" required>
-                <?php foreach ($mesAvis as $unAvis): ?>
-                <option value="<?php echo $unAvis->CodeReservation_inscription?>"><?php echo $unAvis->concours_Nom ?></option>
-                <?php endforeach; ?>
+                    <?php foreach ($mesAvis as $unAvis) : ?>
+                <option value="<?php echo $unAvis->CodeReservation_inscription?>">
+                        <?php echo $unAvis->concours_Nom ?></option>
+                    <?php endforeach; ?>
             </select><br><br>
-        <label for="note">Donner une note entre 0 et 5</label>
+        <label for="note">Donner une note entre 0 et 5</label><br>
         <select name="note" id="note" required>
             <option value="" disabled selected hidden>Choisissez une note</option>
             <option value="0">0</option>
@@ -33,14 +26,12 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select><br><br>
-
             <label class="form-label" for="commentaire">Avez-vous des commentaires à faire ?</label> <br>
         <textarea id="commentaire" name="commentaire" placeholder="Les points d'amélioration sont..."></textarea>
-
-        <div class="d-flex justify-content-center">
-            <input class="btn btn-success mx-auto fs-4 py-1 px-3" type="submit" name="submit" value="Envoyer mon avis">
+            <input class="btn-btn" type="submit" name="submit" value="Envoyer mon avis">
+                    <?= form_close(); ?>
+                </div>
+            </div>
         </div>
-        <?= form_close(); ?>
     </div>
-    <?php } else { echo $concours ; } ?>
-</section>
+</section>      <?php  } ?>

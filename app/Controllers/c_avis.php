@@ -27,7 +27,7 @@ class c_avis extends BaseController
     public function donnerAvis(): string
     {
         $model = new m_avis();
-        $result = $model->getLesAvis(session()->get('login'));
+        $result = $model->getLesAvisNonDonner(session()->get('login'));
         if (isset($result[0])) {
             $data['mesAvis'] = $result;
             $data['titre'] = 'Donner mon avis';
@@ -39,7 +39,7 @@ class c_avis extends BaseController
             . view('v_ajoutAvis', $data)
             . view('v_footer');
     }
-    ///Retourne la page donnerAvis et modifie l'enregistrement dans inscription
+    ///Retourne la page donnerAvis et modifie l'enregistrement dans la table inscription
     public function ajoutAvis(): ?string
     {
         $model = new m_avis();
