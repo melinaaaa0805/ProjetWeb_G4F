@@ -9,11 +9,15 @@
                 <?php if (isset($mesAvis)) { ?>
     <h4 class="text-center"> <?php echo $titre ?></h4>
                     <?= form_open(base_url() . '/public/monespace/donnermonavis/monAvis'); ?>
+                    <div class="text-center">
         <label for="tournoi">Choisir un tournoi</label><br>
             <select name="tournoi" id="tournoi" required>
-                    <?php foreach ($mesAvis as $unAvis) : ?>
+                    <?php foreach ($mesAvis as $unAvis) :
+                        $dateConv = strtotime($unAvis->Date_avoirLieu);
+                        $date = date('d/m', $dateConv);
+                        $heure = date('H:i', $dateConv); ?>
                 <option value="<?php echo $unAvis->CodeReservation_inscription?>">
-                        <?php echo $unAvis->concours_Nom ?></option>
+                        <?php echo $unAvis->concours_Nom . ' - Le ' . $date . ' | ' . $heure ?></option>
                     <?php endforeach; ?>
             </select><br><br>
         <label for="note">Donner une note entre 0 et 5</label><br>
@@ -28,7 +32,7 @@
         </select><br><br>
             <label class="form-label" for="commentaire">Avez-vous des commentaires à faire ?</label> <br>
         <textarea id="commentaire" name="commentaire" placeholder="Les points d'amélioration sont..."></textarea>
-            <input class="btn-btn" type="submit" name="submit" value="Envoyer mon avis">
+                    </div> <input class="btn-btn" type="submit" name="submit" value="Envoyer mon avis">
                     <?= form_close(); ?>
                 </div>
             </div>

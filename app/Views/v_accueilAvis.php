@@ -15,6 +15,7 @@
                     }?></h6>
                 <h3>Retrouvez vos avis ici</h3>
                 <!-- création d'un tableau pour afficher les avis -->
+                <div class="text-center">
                 <div class="tabAvis">
                     <table class="table table-hover table-bordered">
                         <tbody>
@@ -38,7 +39,7 @@
                             <td><?=anchor(
                                 base_url() . '/public/monespace/donnermonavis/',
                                 'Donnez votre avis'
-                                );?> </td>
+                            );?> </td>
                             <td> </td>
                         </tr>
                             <?php } else {?>
@@ -54,6 +55,7 @@
                              endforeach; ?>
                         </tr>
                     </table>
+                </div>
                 </div>
             </div>
         </div>

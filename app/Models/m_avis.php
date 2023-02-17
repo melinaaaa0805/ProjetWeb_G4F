@@ -26,7 +26,8 @@ class m_avis extends \CodeIgniter\Model
     {
         $db = db_connect();
         $builder = $db->table('inscription')
-            ->select('CodeReservation_inscription, inscription_Avis, inscription_AvisCommentaire, concours_Nom')
+            ->select('CodeReservation_inscription, inscription_Avis, inscription_AvisCommentaire, concours_Nom, 
+            Date_avoirLieu')
             ->join('avoirlieu', 'CodeReservation_inscription = avoirlieu_CodeReservation')
             ->join('concours', 'IdConcours_avoirLieu = Id_concours')
             ->where('LoginUser_inscription', $id)
