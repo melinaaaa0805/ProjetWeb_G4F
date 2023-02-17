@@ -13,7 +13,7 @@ class c_accueil extends BaseController
     public function index(): string
     {
         Services::session();
-        $data['titre'] = 'Accueil';
+        $data['titre'] = '';
         if (session()->get('login') == null) {
             return
                 view('General/v_menu')

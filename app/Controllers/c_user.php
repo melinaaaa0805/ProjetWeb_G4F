@@ -7,8 +7,25 @@ use App\Models\m_user;
 
 class c_user extends BaseController
 {
-    public function suppression()
+    public function suppression(): string
     {
+        $login = session()->get('login');
+        $model = new m_user();
+        if ($model->supprimerCompte($login)) {
+            $session = \Config\Services::session();
+            $session->remove('login');
+            $session->destroy();
+            $data['titre'] = 'Votre compte a été supprimé avec succès';
+            return
+                    view('General/v_menu')
+                    . view('General/v_accueil', $data)
+                    . view('General/v_footer');
+        } else {
+            return
+                view('General/v_menuConnecte')
+                . view('Utilisateur/v_infoUser')
+                . view('General/v_footer');
+        }
     }
 ///modification des informations
     public function modificationInfo()

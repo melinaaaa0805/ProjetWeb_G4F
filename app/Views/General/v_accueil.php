@@ -1,7 +1,7 @@
 <?php
 $session = \Config\Services::session();?>
 <!-- ======= Hero Section ======= -->
-<title><?php echo $titre ?></title>
+<h4><?php echo $titre ?></h4>
 <section id="hero" class="d-flex align-items-center justify-content-center">
     <div class="container" data-aos="fade-up">
 

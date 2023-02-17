@@ -57,4 +57,16 @@ class m_user extends \CodeIgniter\Model
             return false;
         }
     }
+    public function supprimerCompte($login): bool
+    {
+        $db = db_connect();
+        $builder = $db->table('user')
+            ->where('login_User ', $login)
+            ->delete();
+        if ($builder) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
