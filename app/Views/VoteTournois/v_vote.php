@@ -10,7 +10,7 @@
         <?= form_open(base_url() . '/public/monvote/voter');
         foreach ($jeux as $UnJeu) :
             ///Affichage des différents jeux avec un bouton radio ?>
-        <input type="radio" name="jeux" value="<?php echo $UnJeu->Id_jeux?>"> <?php echo $UnJeu->jeux_Nom?><br>
+        <input type="radio" name="jeux" value="<?php echo $UnJeu->Id_jeux?>" checked> <?php echo $UnJeu->jeux_Nom?><br>
         <?php endforeach;?>
             <input class="btn-btn" type="submit" name ="submit" value="Valider">
         <?= form_close(); ?>

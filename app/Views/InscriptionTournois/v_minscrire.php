@@ -74,7 +74,7 @@
                             ?></label>
                             <input type="radio" id = "<?php echo $unConcours->Id_concours; ?>" name = "cat"
                                    value = "<?php echo $unConcours->concours_Nom; ?>" class = "categorie"
-                                   onclick = "Affiche_liste(this.className,this.value)" />
+                                   onclick = "Affiche_liste(this.className,this.value)" checked/>
                             <?php }?> </div>
                             <?php endforeach; ?>
                         </p>

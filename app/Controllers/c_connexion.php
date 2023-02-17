@@ -32,10 +32,9 @@ class c_connexion extends BaseController
                 $loginUser = $this->request->getPost('login');
                 $model = new m_user();
                 $result = $model->verifUser($loginUser);
-                if (!$result[0]) {
+                if (!isset($result[0])) {
                     $info['titre'] = 'Mot de passe et/ou identifiant incorrect';
                     $info['validation'] = $this->validator;
-                    $session->setFlashdata('resultConnect', 'Utilisateur non trouvé');
                     return view('General/v_menu')
                     . view('Utilisateur/v_connexion', $info)
                     . view('General/v_footer');
@@ -56,16 +55,15 @@ class c_connexion extends BaseController
                         . view('General/v_accueil', $data)
                         . view('General/v_footer');
                     } else {
-                        $info['titre'] = 'Mot de passe et/ou identifiant incorrect 2';
+                        $info['titre'] = 'Mot de passe et/ou identifiant incorrect';
                         $info['validation'] = $this->validator;
-                        $session->setFlashdata('resultConnect', 'Utilisateur non trouvé');
                         return view('General/v_menu')
                         . view('Utilisateur/v_connexion', $info)
                         . view('General/v_footer');
                     }
                 }
             } else {
-                $info['titre'] = 'Connexion impossible, Corrigez votre saisie';
+                $info['titre'] = 'Connexion impossible, corrigez votre saisie';
                 $info['validation'] = $this->validator;
                 return view('General/v_menu')
                 . view('Utilisateur/v_connexion', $info)

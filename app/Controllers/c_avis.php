@@ -16,7 +16,7 @@ class c_avis extends BaseController
             $data['mesAvis'] = $result;
             $data['titre'] = null;
         } else {
-            $data['titre'] = "Impossible d'afficher cette page, revenez ultérieurement.";
+            $data['titre'] = '';
         }
             return
             view('General/v_menuConnecte')
@@ -43,11 +43,7 @@ class c_avis extends BaseController
     public function ajoutAvis(): ?string
     {
         $model = new m_avis();
-        if ($this->request->getPost('commentaire')) {
-            $commentaire = null;
-        } else {
-            $commentaire = $this->request->getPost('commentaire');
-        }
+        $commentaire = $this->request->getPost('commentaire');
             $code = (int)($this->request->getPost('tournoi'));
             $note = (int)($this->request->getPost('note'));
             $login = session()->get('login');

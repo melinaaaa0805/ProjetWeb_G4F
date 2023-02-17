@@ -28,8 +28,9 @@
                         </tbody>
                         <?php if (!isset($mesAvis[0])) {?>
                             Vous n'étiez inscrit à aucun concours, vous ne pouvez donc pas donner votre avis.
-                        <?php   } ?>
+                        <?php   } else {?>
                         <tr> <?php foreach ($mesAvis as $unAvis) :
+
                             if ($unAvis->inscription_Avis == null) {?>
                             <td><?php echo $unAvis->concours_Nom;?></td>
                             <td><?php $dateConv = strtotime($unAvis->Date_avoirLieu);
@@ -51,9 +52,10 @@
                                 echo 'Le ' . $date . ' | ' . $heure ;?></td>
                             <td><?php echo $unAvis->inscription_Avis ;?></td>
                             <td><?php echo $unAvis->inscription_AvisCommentaire ;?></td>
-                            <?php }
-                             endforeach; ?>
-                        </tr>
+                            <?php } ?>
+                                </tr>
+                            <?php endforeach; } ?>
+
                     </table>
                 </div>
                 </div>
