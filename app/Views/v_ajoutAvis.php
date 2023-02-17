@@ -12,6 +12,7 @@
                     <div class="text-center">
         <label for="tournoi">Choisir un tournoi</label><br>
             <select name="tournoi" id="tournoi" required>
+                <!-- Affichage des avis non donnés par l'utilisateur et d'un formulaire -->
                     <?php foreach ($mesAvis as $unAvis) :
                         $dateConv = strtotime($unAvis->Date_avoirLieu);
                         $date = date('d/m', $dateConv);
@@ -31,7 +32,8 @@
             <option value="5">5</option>
         </select><br><br>
             <label class="form-label" for="commentaire">Avez-vous des commentaires à faire ?</label> <br>
-        <textarea id="commentaire" name="commentaire" placeholder="Les points d'amélioration sont..."></textarea>
+        <textarea id="commentaire" name="commentaire" placeholder="Les points d'amélioration sont..."
+                  rows="10" cols="80"></textarea>
                     </div> <input class="btn-btn" type="submit" name="submit" value="Envoyer mon avis">
                     <?= form_close(); ?>
                 </div>

@@ -39,7 +39,7 @@
                             <td><?=anchor(
                                 base_url() . '/public/monespace/donnermonavis/',
                                 'Donnez votre avis'
-                            );?> </td>
+                                );?> </td>
                             <td> </td>
                         </tr>
                             <?php } else {?>
