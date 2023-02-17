@@ -16,14 +16,14 @@ class c_accueil extends BaseController
         $data['titre'] = 'Accueil';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-            view('v_menuConnecte')
-            . view('v_accueil', $data)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('General/v_accueil', $data)
+            . view('General/v_footer');
         }
     }
     ///retourne la page espace nintendo avec tous les jeux nintendo
@@ -39,14 +39,14 @@ class c_accueil extends BaseController
         Services::session();
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_espaceNintendo', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_espaceNintendo', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_espaceNintendo', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_espaceNintendo', $data)
+                . view('General/v_footer');
         }
     }
     ///retourne la page espace nextgen avec tous les jeux correspondants
@@ -67,14 +67,14 @@ class c_accueil extends BaseController
         $data['titre'] = 'Espace NextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_espaceNextGen', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_espaceNextGen', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_espaceNextGen', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_espaceNextGen', $data)
+                . view('General/v_footer');
         }
     }
 /// retourne la page login
@@ -85,15 +85,15 @@ class c_accueil extends BaseController
         $unUser = new m_user();
         if ($data['User'] = $unUser->verifUser($data)) {
             return
-                view('v_menu')
-                . view('v_espace', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_espace', $data)
+                . view('General/v_footer');
         } else {
             $data['connexion'] = 'Mot de passe ou login incorrect';
             return
-                view('v_menu')
-                . view('v_connexion', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('Utilisateur/v_connexion', $data)
+                . view('General/v_footer');
         }
     }
     /// retourne la page inscription
@@ -102,17 +102,17 @@ class c_accueil extends BaseController
         $data['titre'] = 'Inscription';
         $data['validation'] = \CodeIgniter\Config\Services::validation();
         return
-        view('v_menu')
-        . view('v_inscription', $data)
-        . view('v_footer');
+        view('General/v_menu')
+        . view('Utilisateur/v_inscription', $data)
+        . view('General/v_footer');
     }
 /// retourne la page connexion
     public function connexion(): string
     {
         $data['titre'] = 'Connexion';
         return
-            view('v_menu')
-            . view('v_connexion')
-            . view('v_footer');
+            view('General/v_menu')
+            . view('Utilisateur/v_connexion')
+            . view('General/v_footer');
     }
 }

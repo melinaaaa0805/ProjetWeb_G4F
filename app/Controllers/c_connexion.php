@@ -36,9 +36,9 @@ class c_connexion extends BaseController
                     $info['titre'] = 'Mot de passe et/ou identifiant incorrect';
                     $info['validation'] = $this->validator;
                     $session->setFlashdata('resultConnect', 'Utilisateur non trouvé');
-                    return view('v_menu')
-                    . view('v_connexion', $info)
-                    . view('v_footer');
+                    return view('General/v_menu')
+                    . view('Utilisateur/v_connexion', $info)
+                    . view('General/v_footer');
                 } else {
                     $mdpUser = $result[0]->user_Mdp;
                     $verifPwd = password_verify($this->request->getPost('password'), $mdpUser);
@@ -52,28 +52,28 @@ class c_connexion extends BaseController
                             $session->set('password', $result[0]->user_Mdp);
                             $session->set('niveau', $result[0]->user_Niveau);
                             $data['titre'] = 'Bienvenu ' . $this->request->getPost('login');
-                        return view('v_menuConnecte')
-                        . view('v_accueil', $data)
-                        . view('v_footer');
+                        return view('General/v_menuConnecte')
+                        . view('General/v_accueil', $data)
+                        . view('General/v_footer');
                     } else {
                         $info['titre'] = 'Mot de passe et/ou identifiant incorrect 2';
                         $info['validation'] = $this->validator;
                         $session->setFlashdata('resultConnect', 'Utilisateur non trouvé');
-                        return view('v_menu')
-                        . view('v_connexion', $info)
-                        . view('v_footer');
+                        return view('General/v_menu')
+                        . view('Utilisateur/v_connexion', $info)
+                        . view('General/v_footer');
                     }
                 }
             } else {
                 $info['titre'] = 'Connexion impossible, Corrigez votre saisie';
                 $info['validation'] = $this->validator;
-                return view('v_menu')
-                . view('v_connexion', $info)
-                . view('v_footer');
+                return view('General/v_menu')
+                . view('Utilisateur/v_connexion', $info)
+                . view('General/v_footer');
             }
-        }return view('v_menu')
-        . view('v_connexion', $info)
-        . view('v_footer');
+        }return view('General/v_menu')
+        . view('Utilisateur/v_connexion', $info)
+        . view('General/v_footer');
     }
 
     ///Gestion de la decconnexion
@@ -83,9 +83,9 @@ class c_connexion extends BaseController
         $session->remove('login');
         $session->destroy();
         $data['titre'] = 'Déconnexion réussie';
-        return view('v_menu')
-            . view('v_accueil', $data)
-            . view('v_footer');
+        return view('General/v_menu')
+            . view('General/v_accueil', $data)
+            . view('General/v_footer');
     }
     ///Gestion de l'inscription
     public function ajoutUser(): string
@@ -158,9 +158,9 @@ class c_connexion extends BaseController
                     if ($test) {
                         $info['titre'] = 'Votre compte a bien été créé, veuillez vous connecter';
                         return
-                        view('v_menu')
-                        . view('v_connexion', $info)
-                        . view('v_footer');
+                        view('General/v_menu')
+                        . view('Utilisateur/v_connexion', $info)
+                        . view('General/v_footer');
                     }
                 }
             } else {
@@ -169,8 +169,8 @@ class c_connexion extends BaseController
             }
         }
         return
-            view('v_menu')
-            . view('v_inscription', $info)
-            . view('v_footer');
+            view('General/v_menu')
+            . view('Utilisateur/v_inscription', $info)
+            . view('General/v_footer');
     }
 }

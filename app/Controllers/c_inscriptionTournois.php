@@ -36,14 +36,14 @@ class c_inscriptionTournois extends BaseController
 
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_presentationTournois', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_presentationTournois', $data)
+                . view('General/v_footer');
         } else {
             return
-            view('v_menuConnecte')
-            . view('v_presentationTournois', $data)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('General/v_presentationTournois', $data)
+            . view('General/v_footer');
         }
     }
     ///Retourne les inscriptions de l'utilisateur
@@ -57,9 +57,9 @@ class c_inscriptionTournois extends BaseController
             $data['inscription'] = false;
         }
         return
-            view('v_menuConnecte')
-            . view('v_mesInscriptions', $data)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('InscriptionTournois/v_mesInscriptions', $data)
+            . view('General/v_footer');
     }
 
 /// Retourne tous les concours pour lesquels l'utilisateur peut s'inscrire
@@ -97,9 +97,9 @@ class c_inscriptionTournois extends BaseController
             $data['Xbox'] = false;
         }
                 return
-                    view('v_menuConnecte')
-                    . view('v_minscrire', $data)
-                    . view('v_footer');
+                    view('General/v_menuConnecte')
+                    . view('InscriptionTournois/v_minscrire', $data)
+                    . view('General/v_footer');
     }
         ///Effectue plusieurs controle au niveau des dates et ajoute l'inscription
     public function minscrireTournois(): string
@@ -121,9 +121,9 @@ class c_inscriptionTournois extends BaseController
                     $data['titre'] = 'Vous êtes déjà inscrit à un concours qui se déroule à la même heure 
                     et le même jour';
                     return
-                        view('v_menuConnecte')
-                        . view('v_minscrire', $data)
-                        . view('v_footer');
+                        view('General/v_menuConnecte')
+                        . view('InscriptionTournois/v_minscrire', $data)
+                        . view('General/v_footer');
                 }
             endforeach;
         }
@@ -140,9 +140,9 @@ class c_inscriptionTournois extends BaseController
             } else {
                 $data['titre'] = 'Votre inscription a échoué, veuillez recommencer';
                 return
-                    view('v_menuConnecte')
-                        . view('v_minscrire', $data)
-                        . view('v_footer');
+                    view('General/v_menuConnecte')
+                        . view('InscriptionTournois/v_minscrire', $data)
+                        . view('General/v_footer');
             }
     }
             ///Renvoie une page avec toutes les inscriptions
@@ -153,15 +153,15 @@ class c_inscriptionTournois extends BaseController
         if (isset($result[0])) {
             $data['inscription'] = $result;
             return
-                view('v_menuConnecte')
-                . view('v_desinscriptionTournois', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('InscriptionTournois/v_desinscriptionTournois', $data)
+                . view('General/v_footer');
         } else {
             $data['titre'] = "Impossible d'afficher cette page, veuillez réessayer ultérieurement.";
             return
-                view('v_menuConnecte')
-                . view('v_minscrire', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('InscriptionTournois/v_minscrire', $data)
+                . view('General/v_footer');
         }
     }
             ///Fonction qui permet de se désinscrire
@@ -178,8 +178,8 @@ class c_inscriptionTournois extends BaseController
         }
         $data['titre'] = 'Votre désinscription a échoué, veuillez réessayer ultérieurement.';
         return
-            view('v_menuConnecte')
-            . view('v_minscrire', $data)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('InscriptionTournois/v_minscrire', $data)
+            . view('General/v_footer');
     }
 }

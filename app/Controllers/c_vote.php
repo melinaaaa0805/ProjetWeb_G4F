@@ -37,9 +37,9 @@ class c_vote extends BaseController
             $info['voteXbox'] = null;
         }
         return
-            view('v_menuConnecte')
-            . view('v_mesvotes', $info)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('VoteTournois/v_mesvotes', $info)
+            . view('General/v_footer');
     }
     ///Récupération des jeux pour le vote Switch
     public function tournoisSwitch(): string
@@ -47,9 +47,9 @@ class c_vote extends BaseController
         $model = new m_vote();
         $info['jeux'] = $model->recupJeuVote('Switch');
         return
-            view('v_menuConnecte')
-            . view('v_vote', $info)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('VoteTournois/v_vote', $info)
+            . view('General/v_footer');
     }
     ///Récupération des jeux pour le vote Playstation
     public function tournoisPlaystation(): string
@@ -57,9 +57,9 @@ class c_vote extends BaseController
         $model = new m_vote();
         $info['jeux'] = $model->recupJeuVote('Playstation');
         return
-            view('v_menuConnecte')
-            . view('v_vote', $info)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('VoteTournois/v_vote', $info)
+            . view('General/v_footer');
     }
     ///Récupération des jeux pour le vote Xbox
     public function tournoisXbox(): string
@@ -69,15 +69,15 @@ class c_vote extends BaseController
         $result = $model->recupJeuVote('Xbox');
         if (!$result) {
             return
-                view('v_menuConnecte')
-                . view('v_accueil')
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_accueil')
+                . view('General/v_footer');
         } else {
             $info['jeux'] = $result;
             return
-                view('v_menuConnecte')
-                . view('v_vote', $info)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('VoteTournois/v_vote', $info)
+                . view('General/v_footer');
         }
     }
     ///Gestion de l'ajout du vote
@@ -99,9 +99,9 @@ class c_vote extends BaseController
                 $this->votePage();
         } else {
             return
-            view('v_menuConnecte')
-            . view('v_accueil')
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('General/v_accueil')
+            . view('General/v_footer');
         }
     }
 }

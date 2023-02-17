@@ -77,23 +77,23 @@ class c_user extends BaseController
                     $session->set('niveau', $result[0]->user_Niveau);
                     $info['titre'] = 'La modification a été un succès !';
                     return
-                        view('v_menuConnecte')
-                        . view('v_infoUser', $info)
-                        . view('v_footer');
+                        view('General/v_menuConnecte')
+                        . view('Utilisateur/v_infoUser', $info)
+                        . view('General/v_footer');
                 } else {
                     $info['titre'] = 'La modification a échoué, réessayez ultérieurement';
                     return
-                        view('v_menuConnecte')
-                        . view('v_modifInfo', $info)
-                        . view('v_footer');
+                        view('General/v_menuConnecte')
+                        . view('Utilisateur/v_modifInfo', $info)
+                        . view('General/v_footer');
                 }
             }
                 $info['titre'] = 'La modification a échoué, corrigez votre saisie';
                 $info['validation'] = $this->validator;
                 return
-                    view('v_menuConnecte')
-                    . view('v_modifInfo', $info)
-                    . view('v_footer');
+                    view('General/v_menuConnecte')
+                    . view('Utilisateur/v_modifInfo', $info)
+                    . view('General/v_footer');
         }
     }
 
@@ -101,9 +101,9 @@ class c_user extends BaseController
     public function info(): string
     {
         return
-            view('v_menuConnecte')
-            . view('v_infoUser')
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('Utilisateur/v_infoUser')
+            . view('General/v_footer');
     }
 
     ///Gestion de modification de la page mes informations
@@ -112,8 +112,8 @@ class c_user extends BaseController
         $data['validation'] = \CodeIgniter\Config\Services::validation();
         $data['titre'] = 'Modifier mes informations';
         return
-            view('v_menuConnecte')
-            . view('v_modifInfo', $data)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('Utilisateur/v_modifInfo', $data)
+            . view('General/v_footer');
     }
 }

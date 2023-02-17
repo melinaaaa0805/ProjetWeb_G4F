@@ -1,10 +1,12 @@
-<?php
-    $session = \Config\Services::session();?>
-<!-- Récupération des différentes infos pour l'inscription *// -->
-    <section class="mt-5 pb-5">
-    <h1 class="text-center">Inscription</h1>
+<section id="presentation" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+            <div class="col-xl-6 col-lg-8">
+                <h1>Inscription<span>.</span></h1>
+            </div>
+            <div class="col-xl-6 col-lg-8" data-aos="fade-up">
+            <!-- Récupération des différentes infos pour l'inscription *// -->
         <h4> <?php echo $titre ?></h4>
-    <div class="w-50 mx-auto">
         <?= form_open(base_url() . "/public/ajoutUtilisateur"); ?>
         <label class="form-label" for="login">Login :</label>
         <input class="form-control mb-3" type="text" name="login" id="login"
@@ -44,9 +46,15 @@
         <div class="d-flex justify-content-center">
             <input class="btn btn-success mx-auto fs-4 py-1 px-3" type="submit" name ="submit" value="Valider">
         </div>
-        <a><?=anchor(base_url() . '/public/connexion/', 'Déjà inscrit(e) ? Cliquez ici pour vous connecter.')?></a>
+        <a><?=anchor(
+            base_url() . '/public/connexion/',
+            'Déjà inscrit(e) ? Cliquez ici pour vous connecter.',
+            ['class' => 'btn-btn']
+        )?></a>
 
         <?= form_close(); ?>
+            </div>
+        </div>
     </div>
 </section>
 

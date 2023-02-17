@@ -18,14 +18,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nintendo';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-            view('v_menuConnecte')
-            . view('v_jeux', $data)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('General/v_jeux', $data)
+            . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de Mario
@@ -39,14 +39,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nintendo';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de SwitchSport
@@ -60,14 +60,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nintendo';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de StreetFighter
@@ -81,14 +81,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nintendo';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
 
@@ -103,14 +103,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nintendo';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
 
@@ -125,14 +125,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
 
@@ -148,14 +148,14 @@ class c_jeux extends BaseController
 
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
 
@@ -171,14 +171,14 @@ class c_jeux extends BaseController
 
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
 ///renvoie la page v_jeux avec les informations de LeagueOfLegend
@@ -192,14 +192,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de NBA
@@ -213,14 +213,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de overwatch
@@ -234,14 +234,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de Gran Turismo
@@ -255,14 +255,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de Arkanoid
@@ -276,14 +276,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de F122
@@ -297,14 +297,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
     ///renvoie la page v_jeux avec les informations de haloInfinite
@@ -318,14 +318,14 @@ class c_jeux extends BaseController
         $data['route'] = 'nextGen';
         if (session()->get('login') == null) {
             return
-                view('v_menu')
-                . view('v_accueil', $data)
-                . view('v_footer');
+                view('General/v_menu')
+                . view('General/v_accueil', $data)
+                . view('General/v_footer');
         } else {
             return
-                view('v_menuConnecte')
-                . view('v_jeux', $data)
-                . view('v_footer');
+                view('General/v_menuConnecte')
+                . view('General/v_jeux', $data)
+                . view('General/v_footer');
         }
     }
 }

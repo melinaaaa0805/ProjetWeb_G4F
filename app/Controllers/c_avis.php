@@ -19,9 +19,9 @@ class c_avis extends BaseController
             $data['titre'] = "Impossible d'afficher cette page, revenez ultérieurement.";
         }
             return
-            view('v_menuConnecte')
-            . view('v_accueilAvis', $data)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('AvisTournois/v_accueilAvis', $data)
+            . view('General/v_footer');
     }
     ///Retourne la page ajout avis avec les avis non donnés de l'utilisateur
     public function donnerAvis(): string
@@ -35,9 +35,9 @@ class c_avis extends BaseController
             $data['titre'] = "Impossible d'afficher cette page, revenez ultérieurement.";
         }
         return
-            view('v_menuConnecte')
-            . view('v_ajoutAvis', $data)
-            . view('v_footer');
+            view('General/v_menuConnecte')
+            . view('AvisTournois/v_ajoutAvis', $data)
+            . view('General/v_footer');
     }
     ///Retourne la page donnerAvis et modifie l'enregistrement dans la table inscription
     public function ajoutAvis(): ?string
@@ -64,9 +64,9 @@ class c_avis extends BaseController
             } else {
                 $data['message'] = "Le vote n'a pas été pris en compte, merci de rééssayer ultérieurement.";
                 return
-                    view('v_menuConnecte')
-                    . view('v_accueilAvis', $data)
-                    . view('v_footer');
+                    view('General/v_menuConnecte')
+                    . view('AvisTournois/v_accueilAvis', $data)
+                    . view('General/v_footer');
             }
     }
 }
