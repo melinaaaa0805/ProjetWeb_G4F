@@ -44,7 +44,7 @@
         <?= $validation->getError('password2');?><br><br>
 
         <div class="d-flex justify-content-center">
-            <input class="btn btn-success mx-auto fs-4 py-1 px-3" type="submit" name ="submit" value="Valider">
+            <input class="btn-btn" type="submit" name ="submit" value="Valider">
         </div>
         <a><?=anchor(
             base_url() . '/public/connexion/',
