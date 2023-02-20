@@ -54,4 +54,18 @@ class m_avis extends \CodeIgniter\Model
             return false;
         }
     }
+
+    public function getTousLesAvis(): bool | array
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('inscription')
+            ->select('LoginUser_inscription, inscription_Avis, inscription_AvisCommentaire')
+            ->where('inscription_Avis IS NOT NULL');
+        $query = $builder->get();
+        if ($query->getFieldCount() > 0) {
+            return $query->getResultArray();
+        } else {
+            return false;
+        }
+    }
 }

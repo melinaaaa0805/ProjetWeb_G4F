@@ -139,7 +139,13 @@ $routes->match(['get', 'post'], '/monespace/donnermonavis/', 'c_avis::donnerAvis
 $routes->match(['get', 'post'], '/monespace/donnermonavis/monAvis', 'c_avis::ajoutAvis');
 
 
+/*
+ * --------------------------------------------------------------------
+ * Zone adminitratation
+ * --------------------------------------------------------------------
+ */
 
+$routes->get('admin/', 'c_admin::index');
 
 
 

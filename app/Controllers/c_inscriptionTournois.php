@@ -40,8 +40,9 @@ class c_inscriptionTournois extends BaseController
                 . view('General/v_presentationTournois', $data)
                 . view('General/v_footer');
         } else {
-            return
-            view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
             . view('General/v_presentationTournois', $data)
             . view('General/v_footer');
         }
@@ -56,8 +57,9 @@ class c_inscriptionTournois extends BaseController
         } else {
             $data['inscription'] = false;
         }
-        return
-            view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
             . view('InscriptionTournois/v_mesInscriptions', $data)
             . view('General/v_footer');
     }
@@ -96,8 +98,9 @@ class c_inscriptionTournois extends BaseController
         } else {
             $data['Xbox'] = false;
         }
-                return
-                    view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
                     . view('InscriptionTournois/v_minscrire', $data)
                     . view('General/v_footer');
     }
@@ -120,8 +123,9 @@ class c_inscriptionTournois extends BaseController
                 if ($Inscription->Date_avoirLieu == $dateConcours[0]->Date_avoirLieu) {
                     $data['titre'] = 'Vous êtes déjà inscrit à un concours qui se déroule à la même heure 
                     et le même jour';
-                    return
-                        view('General/v_menuConnecte')
+                    $session = \Config\Services::session();
+                    $infoMenu['niveau'] = $session->get('niveau');
+                    return view('General/v_menuConnecte', $infoMenu)
                         . view('InscriptionTournois/v_minscrire', $data)
                         . view('General/v_footer');
                 }
@@ -139,8 +143,9 @@ class c_inscriptionTournois extends BaseController
                     $this->mesInscriptions();
             } else {
                 $data['titre'] = 'Votre inscription a échoué, veuillez recommencer';
-                return
-                    view('General/v_menuConnecte')
+                $session = \Config\Services::session();
+                $infoMenu['niveau'] = $session->get('niveau');
+                return view('General/v_menuConnecte', $infoMenu)
                         . view('InscriptionTournois/v_minscrire', $data)
                         . view('General/v_footer');
             }
@@ -152,14 +157,16 @@ class c_inscriptionTournois extends BaseController
         $result = $model->recupUserInscription(session()->get('login'));
         if (isset($result[0])) {
             $data['inscription'] = $result;
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('InscriptionTournois/v_desinscriptionTournois', $data)
                 . view('General/v_footer');
         } else {
             $data['titre'] = "Impossible d'afficher cette page, veuillez réessayer ultérieurement.";
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('InscriptionTournois/v_minscrire', $data)
                 . view('General/v_footer');
         }
@@ -177,8 +184,9 @@ class c_inscriptionTournois extends BaseController
             }
         }
         $data['titre'] = 'Votre désinscription a échoué, veuillez réessayer ultérieurement.';
-        return
-            view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
             . view('InscriptionTournois/v_minscrire', $data)
             . view('General/v_footer');
     }

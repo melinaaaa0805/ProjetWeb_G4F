@@ -21,8 +21,9 @@ class c_user extends BaseController
                     . view('General/v_accueil', $data)
                     . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('Utilisateur/v_infoUser')
                 . view('General/v_footer');
         }
@@ -93,22 +94,22 @@ class c_user extends BaseController
                     $session->set('password', $result[0]->user_Mdp);
                     $session->set('niveau', $result[0]->user_Niveau);
                     $info['titre'] = 'La modification a été un succès !';
-                    return
-                        view('General/v_menuConnecte')
+                    $infoMenu['niveau'] = $session->get('niveau');
+                    return view('General/v_menuConnecte', $infoMenu)
                         . view('Utilisateur/v_infoUser', $info)
                         . view('General/v_footer');
                 } else {
                     $info['titre'] = 'La modification a échoué, réessayez ultérieurement';
-                    return
-                        view('General/v_menuConnecte')
+                    $infoMenu['niveau'] = $session->get('niveau');
+                    return view('General/v_menuConnecte', $infoMenu)
                         . view('Utilisateur/v_modifInfo', $info)
                         . view('General/v_footer');
                 }
             }
                 $info['titre'] = 'La modification a échoué, corrigez votre saisie';
                 $info['validation'] = $this->validator;
-                return
-                    view('General/v_menuConnecte')
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                     . view('Utilisateur/v_modifInfo', $info)
                     . view('General/v_footer');
         }
@@ -117,8 +118,9 @@ class c_user extends BaseController
     ///Gestion de la page mes informations
     public function info(): string
     {
-        return
-            view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
             . view('Utilisateur/v_infoUser')
             . view('General/v_footer');
     }
@@ -128,8 +130,9 @@ class c_user extends BaseController
     {
         $data['validation'] = \CodeIgniter\Config\Services::validation();
         $data['titre'] = 'Modifier mes informations';
-        return
-            view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
             . view('Utilisateur/v_modifInfo', $data)
             . view('General/v_footer');
     }

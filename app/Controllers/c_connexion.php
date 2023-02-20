@@ -41,7 +41,7 @@ class c_connexion extends BaseController
                 } else {
                     $mdpUser = $result[0]->user_Mdp;
                     $verifPwd = password_verify($this->request->getPost('password'), $mdpUser);
-                    if ($verifPwd == true & $result[0]->user_Niveau = 1) {
+                    if ($verifPwd == true & $result[0]->user_Niveau >= 1) {
                             $session->set('login', $result[0]->login_User);
                             $session->set('email', $result[0]->user_AdresseMail);
                             $session->set('nom', $result[0]->user_Nom);
@@ -50,8 +50,9 @@ class c_connexion extends BaseController
                             $session->set('age', $result[0]->user_Age);
                             $session->set('password', $result[0]->user_Mdp);
                             $session->set('niveau', $result[0]->user_Niveau);
-                            $data['titre'] = 'Bienvenu ' . $this->request->getPost('login');
-                        return view('General/v_menuConnecte')
+                            $data['titre'] = 'Bienvenue ' . $this->request->getPost('login');
+                        $infoMenu['niveau'] = $session->get('niveau');
+                        return view('General/v_menuConnecte', $infoMenu)
                         . view('General/v_accueil', $data)
                         . view('General/v_footer');
                     } else {

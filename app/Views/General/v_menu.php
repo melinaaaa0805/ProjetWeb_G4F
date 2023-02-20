@@ -17,7 +17,7 @@
 //     echo link_tag( 'public/assets/vendor/icofont/icofont.min.css');
 //     echo link_tag( 'public/assets/vendor/animate.css/animate.min.css');
 //     echo link_tag( 'public/assets/vendor/venobox/venobox.css');
-     echo link_tag('public/assets/vendor/bootstrap/css/bootstrap.min.css');
+     echo link_tag('public/assets/css/bootstrap.min.css');
      echo link_tag('public/assets/vendor/bootstrap-icons/bootstrap-icons.css');
      echo link_tag('public/assets/vendor/boxicons/css/boxicons.min.css');
      echo link_tag('public/assets/vendor/glightbox/css/glightbox.min.css');

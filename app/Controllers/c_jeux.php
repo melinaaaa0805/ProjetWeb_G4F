@@ -22,8 +22,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-            view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
             . view('General/v_jeux', $data)
             . view('General/v_footer');
         }
@@ -43,8 +44,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -64,8 +66,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -85,8 +88,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -107,8 +111,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -129,8 +134,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -152,8 +158,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -175,8 +182,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -196,8 +204,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -217,8 +226,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -238,8 +248,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -259,8 +270,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -280,8 +292,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -301,8 +314,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }
@@ -322,8 +336,9 @@ class c_jeux extends BaseController
                 . view('General/v_accueil', $data)
                 . view('General/v_footer');
         } else {
-            return
-                view('General/v_menuConnecte')
+            $session = \Config\Services::session();
+            $infoMenu['niveau'] = $session->get('niveau');
+            return view('General/v_menuConnecte', $infoMenu)
                 . view('General/v_jeux', $data)
                 . view('General/v_footer');
         }

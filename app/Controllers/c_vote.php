@@ -36,8 +36,9 @@ class c_vote extends BaseController
         } else {
             $info['voteXbox'] = null;
         }
-        return
-            view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
             . view('VoteTournois/v_mesvotes', $info)
             . view('General/v_footer');
     }
@@ -46,8 +47,9 @@ class c_vote extends BaseController
     {
         $model = new m_vote();
         $info['jeux'] = $model->recupJeuVote('Switch');
-        return
-            view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
             . view('VoteTournois/v_vote', $info)
             . view('General/v_footer');
     }

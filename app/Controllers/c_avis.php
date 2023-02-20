@@ -18,8 +18,9 @@ class c_avis extends BaseController
         } else {
             $data['titre'] = '';
         }
-            return
-            view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
             . view('AvisTournois/v_accueilAvis', $data)
             . view('General/v_footer');
     }
@@ -34,8 +35,9 @@ class c_avis extends BaseController
         } else {
             $data['titre'] = "Impossible d'afficher cette page, revenez ultérieurement.";
         }
-        return
-            view('General/v_menuConnecte')
+        $session = \Config\Services::session();
+        $infoMenu['niveau'] = $session->get('niveau');
+        return view('General/v_menuConnecte', $infoMenu)
             . view('AvisTournois/v_ajoutAvis', $data)
             . view('General/v_footer');
     }
@@ -59,8 +61,9 @@ class c_avis extends BaseController
                 $this->mesAvis();
             } else {
                 $data['message'] = "Le vote n'a pas été pris en compte, merci de rééssayer ultérieurement.";
-                return
-                    view('General/v_menuConnecte')
+                $session = \Config\Services::session();
+                $infoMenu['niveau'] = $session->get('niveau');
+                return view('General/v_menuConnecte', $infoMenu)
                     . view('AvisTournois/v_accueilAvis', $data)
                     . view('General/v_footer');
             }
